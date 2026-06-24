@@ -558,7 +558,7 @@
     .tab-bar {
       height: 78px;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 4px;
       padding: 8px 14px 14px;
       background: rgba(255, 253, 250, 0.92);
@@ -579,7 +579,7 @@
       border-radius: 18px;
       color: #74818d;
       background: transparent;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 750;
     }
 
@@ -589,8 +589,8 @@
     }
 
     .tab-btn svg {
-      width: 21px;
-      height: 21px;
+      width: 20px;
+      height: 20px;
       stroke: currentColor;
       stroke-width: 2.2;
       fill: none;
@@ -1232,6 +1232,234 @@
       background: #fff1c8;
     }
 
+    .social-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .friend-card {
+      min-height: 92px;
+      padding: 12px;
+      border-radius: 20px;
+      background: #fffdfa;
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 8px;
+    }
+
+    .friend-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .friend-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: var(--teal-dark);
+      background: var(--mint-soft);
+      font-size: 14px;
+      font-weight: 900;
+      overflow: hidden;
+      border: 1px solid rgba(31, 41, 51, 0.08);
+    }
+
+    .friend-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .friend-meta {
+      min-width: 0;
+    }
+
+    .friend-meta strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.15;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .friend-meta span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .friend-stat {
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .feed-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .feed-card {
+      padding: 13px;
+      border-radius: 20px;
+      background: #fffdfa;
+      border: 1px solid var(--line);
+    }
+
+    .feed-card p {
+      margin: 8px 0 0;
+      color: #4d5a66;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 620;
+    }
+
+    .reaction-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .reaction-btn {
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: #f0f3ee;
+      color: #44515d;
+      font-size: 12px;
+      font-weight: 820;
+    }
+
+    .reaction-btn.primary {
+      color: var(--teal-dark);
+      background: var(--mint-soft);
+    }
+
+    .leaderboard {
+      margin-top: 12px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .rank-row {
+      min-height: 42px;
+      padding: 0 12px;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      background: #f7faf5;
+      color: #33414d;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .rank-row.me {
+      background: var(--mint-soft);
+      color: var(--teal-dark);
+    }
+
+    .leader-badge {
+      min-height: 26px;
+      padding: 0 8px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: #6b4a00;
+      background: #fff1c8;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .streak-pill {
+      min-height: 28px;
+      padding: 0 9px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: #7a3229;
+      background: #ffe0dc;
+      font-size: 12px;
+      font-weight: 880;
+      white-space: nowrap;
+    }
+
+    .ranking-chart {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .ranking-bar {
+      display: grid;
+      grid-template-columns: 74px 1fr 44px;
+      gap: 9px;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 830;
+      color: #44515d;
+    }
+
+    .ranking-track {
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #edf0ea;
+    }
+
+    .ranking-track span {
+      display: block;
+      height: 100%;
+      width: var(--rank, 50%);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+    }
+
+    .rare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .rare-card {
+      min-height: 82px;
+      padding: 12px;
+      border-radius: 18px;
+      display: grid;
+      align-content: space-between;
+      background: linear-gradient(135deg, #fff9e8, #f7fbff);
+      border: 1px solid rgba(244, 184, 96, 0.34);
+    }
+
+    .rare-card small {
+      color: #8a650e;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .rare-card strong {
+      font-size: 13px;
+      line-height: 1.18;
+    }
+
     .side-panel {
       display: grid;
       gap: 14px;
@@ -1450,6 +1678,7 @@
               <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
               <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
               <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
             </nav>
           </section>
@@ -1627,6 +1856,7 @@
               <button class="tab-btn active" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
               <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
               <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
             </nav>
           </section>
@@ -1679,6 +1909,7 @@
               <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
               <button class="tab-btn active" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
               <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
             </nav>
           </section>
@@ -1743,6 +1974,125 @@
               <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
               <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
               <button class="tab-btn active" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
+              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
+            </nav>
+          </section>
+
+          <section class="screen" id="screen-social" data-screen="social" aria-label="Social screen">
+            <header class="app-header">
+              <div class="title-wrap">
+                <div class="screen-kicker">Friends</div>
+                <div class="screen-title">Social</div>
+              </div>
+              <button class="icon-btn" type="button" aria-label="Add friend">
+                <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M19 8v6" /><path d="M22 11h-6" /></svg>
+              </button>
+            </header>
+            <div class="content">
+              <div class="win-card">
+                <small>Weekly leaders</small>
+                <h2>Maya leads by 2 quests</h2>
+                <button class="share-btn" type="button">Cheer the circle</button>
+              </div>
+              <div class="social-summary">
+                <div class="friend-card">
+                  <div class="friend-row">
+                    <div class="friend-avatar"><img src="assets/cash-dog-avatar.png" alt="Cash avatar" /></div>
+                    <div class="friend-meta"><strong>You</strong><span>Level 4</span></div>
+                  </div>
+                  <div class="friend-stat">7</div>
+                  <div class="stat-label">quests this week</div>
+                  <span class="streak-pill">4-day streak</span>
+                </div>
+                <div class="friend-card">
+                  <div class="friend-row">
+                    <div class="friend-avatar">M</div>
+                    <div class="friend-meta"><strong>Maya</strong><span>Weekly leader</span></div>
+                  </div>
+                  <div class="friend-stat">9</div>
+                  <div class="stat-label">quests this week</div>
+                  <span class="leader-badge">Leader</span>
+                </div>
+              </div>
+              <div class="xp-card">
+                <div class="xp-head">
+                  <span>Circle ranking</span>
+                  <span class="xp-level">Private</span>
+                </div>
+                <div class="leaderboard">
+                  <div class="rank-row"><span>1</span><span>Maya</span><span>9 quests</span></div>
+                  <div class="rank-row me"><span>2</span><span>You</span><span>7 quests</span></div>
+                  <div class="rank-row"><span>3</span><span>Jordan</span><span>6 quests</span></div>
+                  <div class="rank-row"><span>4</span><span>Ari</span><span>5 quests</span></div>
+                </div>
+                <div class="ranking-chart" aria-label="Weekly quest ranking chart">
+                  <div class="ranking-bar"><span>Maya</span><div class="ranking-track"><span style="--rank: 90%"></span></div><span>9</span></div>
+                  <div class="ranking-bar"><span>You</span><div class="ranking-track"><span style="--rank: 70%"></span></div><span>7</span></div>
+                  <div class="ranking-bar"><span>Jordan</span><div class="ranking-track"><span style="--rank: 60%"></span></div><span>6</span></div>
+                  <div class="ranking-bar"><span>Ari</span><div class="ranking-track"><span style="--rank: 50%"></span></div><span>5</span></div>
+                </div>
+              </div>
+              <div class="feed-list">
+                <div class="feed-card">
+                  <div class="friend-row">
+                    <div class="friend-avatar">J</div>
+                    <div class="friend-meta"><strong>Jordan</strong><span>12 min ago</span></div>
+                    <span class="leader-badge">Rare</span>
+                  </div>
+                  <p>Unlocked “Cold Open”: first 90 minutes of the morning vape-free.</p>
+                  <div class="reaction-row">
+                    <button class="reaction-btn primary like-btn" type="button">Like 18</button>
+                    <button class="reaction-btn" type="button">Cheer</button>
+                    <button class="reaction-btn" type="button">Comment</button>
+                  </div>
+                </div>
+                <div class="feed-card">
+                  <div class="friend-row">
+                    <div class="friend-avatar">A</div>
+                    <div class="friend-meta"><strong>Ari</strong><span>34 min ago</span></div>
+                    <span class="streak-pill">6-day streak</span>
+                  </div>
+                  <p>Shared a 10% weekly reduction. Progress, not perfection.</p>
+                  <div class="reaction-row">
+                    <button class="reaction-btn primary like-btn" type="button">Like 12</button>
+                    <button class="reaction-btn" type="button">Support</button>
+                    <button class="reaction-btn" type="button">Comment</button>
+                  </div>
+                </div>
+                <div class="feed-card">
+                  <div class="friend-row">
+                    <div class="friend-avatar">M</div>
+                    <div class="friend-meta"><strong>Maya</strong><span>1 hr ago</span></div>
+                    <span class="leader-badge">Leader</span>
+                  </div>
+                  <p>Completed “Cash walk bonus” and moved into first place this week.</p>
+                  <div class="reaction-row">
+                    <button class="reaction-btn primary like-btn" type="button">Like 24</button>
+                    <button class="reaction-btn" type="button">Nice gap</button>
+                    <button class="reaction-btn" type="button">Comment</button>
+                  </div>
+                </div>
+              </div>
+              <div class="xp-card">
+                <div class="xp-head">
+                  <span>Rare achievements</span>
+                  <span class="xp-level">Low-frequency badges</span>
+                </div>
+                <div class="rare-grid">
+                  <div class="rare-card"><small>Rare</small><strong>Cold Open</strong></div>
+                  <div class="rare-card"><small>Epic</small><strong>Weekend Warrior</strong></div>
+                  <div class="rare-card"><small>Rare</small><strong>Stress Pivot</strong></div>
+                  <div class="rare-card"><small>Legend</small><strong>First Full Day</strong></div>
+                </div>
+              </div>
+            </div>
+            <nav class="tab-bar" aria-label="Main navigation">
+              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>Today</span></button>
+              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
+              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
+              <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
+              <button class="tab-btn active" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
               <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
             </nav>
           </section>
@@ -1786,6 +2136,7 @@
               <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
               <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
               <button class="tab-btn active" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
             </nav>
           </section>
@@ -1802,6 +2153,7 @@
             <button class="mini-screen" type="button" data-target="craving"><span>Support</span><strong>Craving timer</strong></button>
             <button class="mini-screen" type="button" data-target="trends"><span>Insight</span><strong>Usage trends</strong></button>
             <button class="mini-screen" type="button" data-target="quests"><span>Game</span><strong>Quests + XP</strong></button>
+            <button class="mini-screen" type="button" data-target="social"><span>Friends</span><strong>Social feed</strong></button>
             <button class="mini-screen" type="button" data-target="wins"><span>Reward</span><strong>Achievements</strong></button>
             <button class="mini-screen" type="button" data-target="onboarding"><span>Setup</span><strong>Goal selection</strong></button>
             <button class="mini-screen" type="button" data-target="cash"><span>Personal</span><strong>Cash Mode</strong></button>
@@ -1823,6 +2175,7 @@
             <li>One-handed logging is the primary interaction.</li>
             <li>Gap-building is rewarded before full quitting.</li>
             <li>Quests and XP reward tracking, delaying, and recovery.</li>
+            <li>Social progress is opt-in and centered on encouragement.</li>
             <li>Cash Mode gives the app a personal reason to come back.</li>
             <li><a href="device-mockups.html">Apple Watch and widget mockups</a> support quick logging away from the app.</li>
           </ul>
@@ -1910,6 +2263,16 @@
 
     document.querySelectorAll(".chip").forEach((chip) => {
       chip.addEventListener("click", () => chip.classList.toggle("selected"));
+    });
+
+    document.querySelectorAll(".like-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const match = button.textContent.match(/(\d+)/);
+        const count = match ? Number(match[1]) + 1 : 1;
+        button.textContent = `Liked ${count}`;
+        button.classList.add("primary");
+        showToast("Support sent.");
+      });
     });
 
     function setAvatarImage(src, alt) {
