@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PuffPause Watch + Widget Mockups</title>
+  <style>
+    :root {
+      --bg: #f5f1ea;
+      --surface: #fffdfa;
+      --ink: #1f2933;
+      --muted: #687582;
+      --line: rgba(31, 41, 51, 0.12);
+      --teal: #0e6b68;
+      --mint: #bfe9d4;
+      --mint-soft: #e4f4ec;
+      --coral: #f27d72;
+      --gold: #f4b860;
+      --blue: #4078a8;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Segoe UI, sans-serif;
+      color: var(--ink);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 7%, rgba(191, 233, 212, 0.7), transparent 28%),
+        radial-gradient(circle at 90% 12%, rgba(244, 184, 96, 0.28), transparent 26%),
+        linear-gradient(135deg, #f7f2e9 0%, #eef8f2 48%, #fff8f2 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      padding: 42px 24px 60px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #094f4d;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--teal);
+    }
+
+    .back-link {
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 253, 250, 0.72);
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 760px;
+      margin: 20px 0 34px;
+      color: #394754;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+
+    .section {
+      margin-top: 36px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .watch-board,
+    .widget-board {
+      border-radius: 32px;
+      background: rgba(255, 253, 250, 0.7);
+      border: 1px solid var(--line);
+      box-shadow: 0 30px 80px rgba(28, 37, 46, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .watch-board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 26px;
+      padding: 28px;
+      align-items: start;
+    }
+
+    .watch-set {
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+    }
+
+    .watch-label,
+    .device-label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: 6px;
+    }
+
+    .watch {
+      width: 210px;
+      height: 252px;
+      margin-top: 8px;
+      border-radius: 58px;
+      padding: 14px;
+      background: #161d25;
+      position: relative;
+      box-shadow: 0 20px 44px rgba(31, 41, 51, 0.24);
+    }
+
+    .watch::before,
+    .watch::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 86px;
+      height: 26px;
+      transform: translateX(-50%);
+      background: #10161d;
+      border-radius: 18px;
+    }
+
+    .watch::before {
+      top: -20px;
+    }
+
+    .watch::after {
+      bottom: -20px;
+    }
+
+    .crown {
+      position: absolute;
+      right: -7px;
+      top: 86px;
+      width: 9px;
+      height: 52px;
+      border-radius: 8px;
+      background: #27313d;
+    }
+
+    .watch-screen {
+      height: 100%;
+      border-radius: 45px;
+      overflow: hidden;
+      background: #fffdfa;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      padding: 12px;
+    }
+
+    .watch-status {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .watch-main {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      gap: 7px;
+      text-align: center;
+    }
+
+    .watch-gap {
+      font-size: 40px;
+      line-height: 0.92;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .watch-small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.15;
+      font-weight: 760;
+    }
+
+    .watch-action {
+      min-height: 48px;
+      width: 100%;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--teal);
+      font-size: 16px;
+      font-weight: 850;
+    }
+
+    .watch-action.secondary {
+      color: var(--teal);
+      background: var(--mint-soft);
+    }
+
+    .watch-dog {
+      width: 56px;
+      height: 56px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .watch-dog img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .complication-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .complication {
+      min-height: 42px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: #f0f3ee;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .widget-board {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: minmax(280px, 0.82fr) minmax(340px, 1.18fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .phone-frame {
+      width: 310px;
+      min-height: 638px;
+      margin: 0 auto;
+      border-radius: 46px;
+      padding: 10px;
+      background: #182029;
+      box-shadow: 0 24px 55px rgba(31, 41, 51, 0.22);
+    }
+
+    .phone-screen {
+      min-height: 618px;
+      border-radius: 38px;
+      overflow: hidden;
+      padding: 22px;
+      background:
+        linear-gradient(rgba(31, 41, 51, 0.17), rgba(31, 41, 51, 0.04)),
+        radial-gradient(circle at 52% 22%, rgba(191, 233, 212, 0.86), transparent 31%),
+        radial-gradient(circle at 70% 82%, rgba(244, 184, 96, 0.28), transparent 32%),
+        #f8f3ea;
+    }
+
+    .lock-screen {
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(31, 41, 51, 0.22), rgba(31, 41, 51, 0.48)),
+        url("assets/cash-dog-avatar.png") center 44% / 112% no-repeat,
+        #21302d;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .lock-time {
+      text-align: center;
+      padding-top: 8px;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.24);
+    }
+
+    .lock-time strong {
+      display: block;
+      font-size: 68px;
+      line-height: 0.9;
+      font-weight: 860;
+      letter-spacing: 0;
+    }
+
+    .lock-time span {
+      display: block;
+      margin-top: 9px;
+      font-size: 15px;
+      font-weight: 720;
+    }
+
+    .lock-widget {
+      border-radius: 26px;
+      padding: 16px;
+      background: rgba(255, 253, 250, 0.78);
+      color: var(--ink);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+    }
+
+    .widget-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .widget-kicker {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .widget-number {
+      margin-top: 4px;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .widget-pill {
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--teal);
+      background: var(--mint-soft);
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .home-screen {
+      background:
+        radial-gradient(circle at 30% 15%, rgba(191, 233, 212, 0.82), transparent 28%),
+        radial-gradient(circle at 80% 80%, rgba(244, 184, 96, 0.3), transparent 34%),
+        linear-gradient(180deg, #f9f5ec, #eaf5ef);
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px 13px;
+      margin-top: 12px;
+    }
+
+    .app-icon {
+      display: grid;
+      justify-items: center;
+      gap: 5px;
+      color: #34424e;
+      font-size: 10px;
+      font-weight: 760;
+    }
+
+    .app-icon i {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: block;
+      background: linear-gradient(135deg, #fffdfa, #dfeee5);
+      box-shadow: 0 10px 18px rgba(31, 41, 51, 0.08);
+    }
+
+    .home-widget {
+      margin-top: 20px;
+      min-height: 150px;
+      border-radius: 30px;
+      padding: 18px;
+      background: rgba(255, 253, 250, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      box-shadow: 0 18px 38px rgba(31, 41, 51, 0.12);
+    }
+
+    .widget-dog {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .widget-dog img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .quick-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .quick-button {
+      min-height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--teal);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .quick-button.urge {
+      color: var(--teal);
+      background: var(--mint-soft);
+    }
+
+    .integration-notes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .note-card {
+      min-height: 142px;
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255, 253, 250, 0.72);
+      border: 1px solid var(--line);
+    }
+
+    .note-card h3 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .note-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    @media (max-width: 980px) {
+      .watch-board,
+      .widget-board,
+      .integration-notes {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .page {
+        padding: 26px 14px 42px;
+      }
+
+      .phone-frame {
+        width: min(100%, 310px);
+      }
+
+      .watch-board,
+      .widget-board {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="topbar">
+      <div class="brand"><span class="mark">+</span> PuffPause device mockups</div>
+      <a class="back-link" href="./">Back to app mockup</a>
+    </nav>
+
+    <header>
+      <h1>Quick log everywhere.</h1>
+      <p class="lede">The watch app and widgets are designed for the tiny automatic moment before vaping: one glance at the gap, one tap to log a puff, one tap to ride out an urge.</p>
+    </header>
+
+    <section class="section" id="watch-mockups">
+      <div class="section-head">
+        <h2>Apple Watch App</h2>
+        <p>Fast reporting with large tap targets, haptic feedback, and a complication that keeps the current gap visible without opening the phone.</p>
+      </div>
+      <div class="watch-board">
+        <div class="watch-set">
+          <div class="watch-label">Complication glance</div>
+          <div class="watch">
+            <span class="crown"></span>
+            <div class="watch-screen">
+              <div class="watch-status"><span>9:41</span><span>27m</span></div>
+              <div class="watch-main">
+                <div class="watch-dog"><img src="assets/cash-dog-avatar.png" alt="Cartoon Cash avatar" /></div>
+                <div class="watch-gap">27</div>
+                <div class="watch-small">min since<br />last puff</div>
+                <div class="complication-grid">
+                  <div class="complication">Goal 30m</div>
+                  <div class="complication">Cash</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="watch-set">
+          <div class="watch-label">One-tap puff log</div>
+          <div class="watch">
+            <span class="crown"></span>
+            <div class="watch-screen">
+              <div class="watch-status"><span>9:41</span><span>Today 14</span></div>
+              <div class="watch-main">
+                <div class="watch-small">PuffPause</div>
+                <div class="watch-gap">Log</div>
+                <div class="watch-action">+ Puff</div>
+                <div class="watch-action secondary">Urge Only</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="watch-set">
+          <div class="watch-label">Delay timer</div>
+          <div class="watch">
+            <span class="crown"></span>
+            <div class="watch-screen">
+              <div class="watch-status"><span>9:41</span><span>Craving</span></div>
+              <div class="watch-main">
+                <div class="watch-small">Try one more</div>
+                <div class="watch-gap">3:00</div>
+                <div class="watch-small">Cash is rooting<br />for this gap.</div>
+                <div class="watch-action">Start</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="widget-mockups">
+      <div class="section-head">
+        <h2>Lock + Home Screen Widgets</h2>
+        <p>Widgets make progress ambient: the user sees the current gap and can jump straight into logging or craving mode from the iPhone.</p>
+      </div>
+      <div class="widget-board">
+        <div>
+          <div class="device-label">Lock screen widget</div>
+          <div class="phone-frame">
+            <div class="phone-screen lock-screen">
+              <div class="lock-time">
+                <strong>9:41</strong>
+                <span>Wednesday, June 24</span>
+              </div>
+              <div class="lock-widget">
+                <div class="widget-row">
+                  <div>
+                    <div class="widget-kicker">PuffPause</div>
+                    <div class="widget-number">27 min</div>
+                  </div>
+                  <div class="widget-pill">3m to goal</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="device-label">Home screen widget</div>
+          <div class="phone-frame">
+            <div class="phone-screen home-screen">
+              <div class="app-grid">
+                <div class="app-icon"><i></i><span>Mail</span></div>
+                <div class="app-icon"><i></i><span>Maps</span></div>
+                <div class="app-icon"><i></i><span>Notes</span></div>
+                <div class="app-icon"><i></i><span>Music</span></div>
+                <div class="app-icon"><i></i><span>Photos</span></div>
+                <div class="app-icon"><i></i><span>Health</span></div>
+                <div class="app-icon"><i></i><span>Clock</span></div>
+                <div class="app-icon"><i></i><span>Weather</span></div>
+              </div>
+              <div class="home-widget">
+                <div class="widget-row">
+                  <div>
+                    <div class="widget-kicker">PuffPause</div>
+                    <div class="widget-number">27 min</div>
+                    <div class="watch-small">Best gap today: 1h 12m</div>
+                  </div>
+                  <div class="widget-dog"><img src="assets/cash-dog-avatar.png" alt="Cartoon Cash avatar" /></div>
+                </div>
+                <div class="quick-buttons">
+                  <div class="quick-button">Log Puff</div>
+                  <div class="quick-button urge">Urge Only</div>
+                </div>
+              </div>
+              <div class="app-grid" style="margin-top: 20px;">
+                <div class="app-icon"><i></i><span>Safari</span></div>
+                <div class="app-icon"><i></i><span>Calendar</span></div>
+                <div class="app-icon"><i></i><span>Wallet</span></div>
+                <div class="app-icon"><i></i><span>PuffPause</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Integration Notes</h2>
+        <p>These are product notes for the native app build, not medical claims.</p>
+      </div>
+      <div class="integration-notes">
+        <article class="note-card">
+          <h3>Apple Watch</h3>
+          <p>Use a watchOS companion for one-tap puff logging, urge-only logging, delay timers, haptics, and a complication showing the current vape-free gap.</p>
+        </article>
+        <article class="note-card">
+          <h3>Widgets</h3>
+          <p>Use WidgetKit for Lock Screen and Home Screen widgets that display the current gap, next goal, today count, and Cash Mode encouragement.</p>
+        </article>
+        <article class="note-card">
+          <h3>Sync</h3>
+          <p>Sync iPhone, widgets, and Apple Watch through shared local app data and WatchConnectivity so logging from the watch updates the phone timeline.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

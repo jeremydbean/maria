@@ -379,8 +379,15 @@
     .timer-label {
       margin-top: 5px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.16;
       font-weight: 700;
+      max-width: 96px;
+    }
+
+    .timer-label span {
+      display: block;
+      white-space: nowrap;
     }
 
     .goal-pill {
@@ -491,16 +498,16 @@
       width: 52px;
       height: 52px;
       border-radius: 18px;
-      display: grid;
-      place-items: center;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 58% 36%, #563b24 0 7px, transparent 8px),
-        radial-gradient(circle at 40% 36%, #563b24 0 7px, transparent 8px),
-        radial-gradient(circle at 50% 48%, #23160e 0 5px, transparent 6px),
-        radial-gradient(circle at 50% 58%, #f1d4ad 0 18px, transparent 19px),
-        radial-gradient(circle at 50% 44%, #b5783e 0 28px, #865220 29px 34px, transparent 35px),
-        linear-gradient(135deg, #f4b860, #bfe9d4);
+      background: #fff4da;
+      border: 1px solid rgba(31, 41, 51, 0.08);
+    }
+
+    .pet-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
 
     .pet-text strong {
@@ -762,10 +769,18 @@
       margin-bottom: 14px;
     }
 
+    .field-label {
+      justify-self: start;
+      margin-top: 4px;
+      color: #4f5c68;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
     .text-input {
       width: 100%;
-      min-height: 56px;
-      margin-top: 10px;
+      min-height: 50px;
+      margin-top: 7px;
       padding: 0 16px;
       border-radius: 18px;
       border: 1px solid var(--line);
@@ -774,6 +789,70 @@
       outline: none;
       font-weight: 750;
       text-align: center;
+    }
+
+    .avatar-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 9px;
+    }
+
+    .avatar-option {
+      aspect-ratio: 1;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: #f5f7f2;
+      border: 2px solid transparent;
+      color: var(--teal-dark);
+      font-size: 26px;
+      font-weight: 850;
+    }
+
+    .avatar-option.selected {
+      border-color: var(--teal);
+      background: var(--mint-soft);
+      box-shadow: 0 0 0 3px rgba(14, 107, 104, 0.12);
+    }
+
+    .avatar-option img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .upload-control {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 9px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--teal-dark);
+      background: #eef4ef;
+      border: 1px dashed rgba(14, 107, 104, 0.35);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .upload-control svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .hidden-file {
+      display: none;
     }
 
     .craving-hero {
@@ -1197,7 +1276,7 @@
                 <div class="ring" id="gap-ring">
                   <div class="ring-inner">
                     <div class="timer-value" id="gap-value">27</div>
-                    <div class="timer-label">min since last puff</div>
+                    <div class="timer-label"><span>min</span><span>since your</span><span>last puff</span></div>
                   </div>
                 </div>
                 <div class="goal-pill" id="goal-pill">Next goal: 30 min</div>
@@ -1218,8 +1297,8 @@
                 <div class="stat-card"><div class="stat-number" id="urge-count">3</div><div class="stat-label">urges beat</div></div>
               </div>
               <div class="cash-card">
-                <div class="pet-photo" aria-label="Cash illustration"></div>
-                <div class="pet-text"><strong>Cash Mode</strong><span>Cash gets bonus couch time when you make it to 30 minutes.</span></div>
+                <div class="pet-photo" aria-label="Cash illustration"><img class="cash-avatar-img" src="assets/cash-dog-avatar.png" alt="Cartoon dog avatar for Cash" /></div>
+                <div class="pet-text"><strong><span class="pet-name">Cash</span> Mode</strong><span><span class="pet-name">Cash</span> gets bonus couch time when you make it to 30 minutes.</span></div>
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
@@ -1324,10 +1403,27 @@
             <div class="content">
               <div class="setup-card">
                 <div class="pet-setup">
-                  <div class="pet-photo" aria-label="Cash illustration"></div>
+                  <div class="pet-photo" aria-label="Selected motivation avatar"><img class="cash-avatar-img" src="assets/cash-dog-avatar.png" alt="Cartoon dog avatar for Cash" /></div>
                   <h2>Do it for your favorite little witness.</h2>
                   <p>Add a pet or person who makes the next small win feel worth it.</p>
-                  <input class="text-input" value="Cash" aria-label="Pet name" />
+                  <label class="field-label" for="support-name">Pet or person name</label>
+                  <input class="text-input" id="support-name" value="Cash" aria-label="Pet or person name" />
+                  <div class="baseline-field">
+                    <label>Choose an avatar</label>
+                    <div class="avatar-grid" aria-label="Avatar choices">
+                      <button class="avatar-option selected" type="button" data-avatar="assets/cash-dog-avatar.png" aria-label="Cartoon dog avatar">
+                        <img src="assets/cash-dog-avatar.png" alt="" />
+                      </button>
+                      <button class="avatar-option" type="button" data-initial="M" aria-label="Mint person avatar">M</button>
+                      <button class="avatar-option" type="button" data-initial="J" aria-label="Gold person avatar">J</button>
+                      <button class="avatar-option" type="button" data-initial="B" aria-label="Coral person avatar">B</button>
+                    </div>
+                    <label class="upload-control" for="photo-upload">
+                      <svg viewBox="0 0 24 24"><path d="M4 16.5V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2.5" /><path d="m16 8-4-4-4 4" /><path d="M12 4v12" /></svg>
+                      Upload photo
+                    </label>
+                    <input class="hidden-file" id="photo-upload" type="file" accept="image/*" aria-label="Upload a pet or person photo" />
+                  </div>
                 </div>
                 <div class="baseline-field">
                   <label>Tone</label>
@@ -1463,8 +1559,8 @@
                 <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M11 17a3 3 0 0 1-6 0c0-2.5 3-5 3-5s3 2.5 3 5Z" /><path d="M19 17a3 3 0 0 1-6 0c0-2.5 3-5 3-5s3 2.5 3 5Z" /></svg></span><strong>Cash walk unlocked</strong></div>
               </div>
               <div class="cash-card">
-                <div class="pet-photo" aria-label="Cash illustration"></div>
-                <div class="pet-text"><strong>Cash is proud-ish</strong><span>That was a tiny win. Tiny wins count.</span></div>
+                <div class="pet-photo" aria-label="Cash illustration"><img class="cash-avatar-img" src="assets/cash-dog-avatar.png" alt="Cartoon dog avatar for Cash" /></div>
+                <div class="pet-text"><strong><span class="pet-name">Cash</span> is proud-ish</strong><span>That was a tiny win. Tiny wins count.</span></div>
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
@@ -1507,6 +1603,7 @@
             <li>One-handed logging is the primary interaction.</li>
             <li>Gap-building is rewarded before full quitting.</li>
             <li>Cash Mode gives the app a personal reason to come back.</li>
+            <li><a href="device-mockups.html">Apple Watch and widget mockups</a> support quick logging away from the app.</li>
           </ul>
         </div>
       </aside>
@@ -1525,12 +1622,16 @@
     const goalPill = document.getElementById("goal-pill");
     const baselineValue = document.getElementById("baseline-value");
     const timerReadout = document.getElementById("timer-readout");
+    const supportName = document.getElementById("support-name");
+    const photoUpload = document.getElementById("photo-upload");
+    const avatarImages = [...document.querySelectorAll(".cash-avatar-img")];
 
     let puffs = 14;
     let urges = 3;
     let selectedMinutes = 3;
     let toastTimer;
     let baseline = 40;
+    let uploadedAvatarUrl;
 
     function showToast(message) {
       clearTimeout(toastTimer);
@@ -1565,6 +1666,47 @@
 
     document.querySelectorAll(".chip").forEach((chip) => {
       chip.addEventListener("click", () => chip.classList.toggle("selected"));
+    });
+
+    function setAvatarImage(src, alt) {
+      avatarImages.forEach((image) => {
+        image.src = src;
+        image.alt = alt;
+      });
+    }
+
+    function setAvatarInitial(initial) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="34" fill="#e4f4ec"/><circle cx="60" cy="45" r="21" fill="#0e6b68"/><path d="M25 105c6-25 24-38 35-38s29 13 35 38" fill="#0e6b68"/><text x="60" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#fffdfa">${initial}</text></svg>`;
+      setAvatarImage(`data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`, `${initial} avatar`);
+    }
+
+    document.querySelectorAll(".avatar-option").forEach((option) => {
+      option.addEventListener("click", () => {
+        document.querySelectorAll(".avatar-option").forEach((item) => item.classList.remove("selected"));
+        option.classList.add("selected");
+        if (option.dataset.avatar) {
+          setAvatarImage(option.dataset.avatar, "Selected cartoon dog avatar");
+        } else {
+          setAvatarInitial(option.dataset.initial || "P");
+        }
+      });
+    });
+
+    photoUpload.addEventListener("change", () => {
+      const file = photoUpload.files && photoUpload.files[0];
+      if (!file) return;
+      if (uploadedAvatarUrl) URL.revokeObjectURL(uploadedAvatarUrl);
+      uploadedAvatarUrl = URL.createObjectURL(file);
+      document.querySelectorAll(".avatar-option").forEach((item) => item.classList.remove("selected"));
+      setAvatarImage(uploadedAvatarUrl, "Uploaded pet or person photo");
+      showToast("Photo added to Cash Mode.");
+    });
+
+    supportName.addEventListener("input", () => {
+      const name = supportName.value.trim() || "your reason";
+      document.querySelectorAll(".pet-name").forEach((label) => {
+        label.textContent = name;
+      });
     });
 
     document.getElementById("log-puff").addEventListener("click", () => {

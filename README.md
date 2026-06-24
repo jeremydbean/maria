@@ -9,3 +9,7 @@ The static mockup lives in `docs/index.html` and is ready for GitHub Pages.
 Once Pages is enabled for the repository, the public page will be:
 
 https://jeremydbean.github.io/maria/
+
+Device mockups for Apple Watch and iOS widgets:
+
+https://jeremydbean.github.io/maria/device-mockups.html
