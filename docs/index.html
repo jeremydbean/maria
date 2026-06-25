@@ -1460,6 +1460,157 @@
       line-height: 1.18;
     }
 
+    body.anime-mode {
+      --bg: #fdf6ee;
+      --surface: #fffaf2;
+      --ink: #172132;
+      --muted: #657386;
+      --line: rgba(23, 33, 50, 0.16);
+      --teal: #087b75;
+      --teal-dark: #075753;
+      --mint: #b8f3db;
+      --mint-soft: #e8fff4;
+      --coral: #ff6f61;
+      --gold: #ffc857;
+      --blue: #3d8fd9;
+      background:
+        linear-gradient(135deg, rgba(8, 123, 117, 0.12) 0 12%, transparent 12% 24%, rgba(255, 200, 87, 0.16) 24% 36%, transparent 36% 100%),
+        linear-gradient(165deg, #fff4df 0%, #e9fff4 48%, #fff7fa 100%);
+    }
+
+    body.anime-mode .brand-mark,
+    body.anime-mode .mark {
+      border: 2px solid #172132;
+      box-shadow: 4px 4px 0 #172132;
+    }
+
+    body.anime-mode h1 {
+      color: #172132;
+      text-shadow: 3px 3px 0 #b8f3db, 6px 6px 0 rgba(255, 200, 87, 0.75);
+    }
+
+    body.anime-mode .phone-shell {
+      background: #172132;
+      box-shadow: 12px 12px 0 rgba(8, 123, 117, 0.24), var(--shadow);
+    }
+
+    body.anime-mode .phone {
+      background: #fffaf2;
+    }
+
+    body.anime-mode .screen {
+      background:
+        linear-gradient(135deg, rgba(255, 200, 87, 0.14) 0 16%, transparent 16% 100%),
+        linear-gradient(180deg, #fffaf2 0%, #effff6 100%);
+    }
+
+    body.anime-mode .callout,
+    body.anime-mode .panel-card,
+    body.anime-mode .setup-card,
+    body.anime-mode .chart-card,
+    body.anime-mode .stat-card,
+    body.anime-mode .xp-card,
+    body.anime-mode .quest-card,
+    body.anime-mode .feed-card,
+    body.anime-mode .friend-card,
+    body.anime-mode .badge,
+    body.anime-mode .cash-card,
+    body.anime-mode .rare-card {
+      border: 2px solid #172132;
+      box-shadow: 5px 5px 0 rgba(23, 33, 50, 0.14);
+    }
+
+    body.anime-mode .hero-timer,
+    body.anime-mode .craving-hero {
+      border: 2px solid #172132;
+      background:
+        linear-gradient(135deg, rgba(184, 243, 219, 0.7), rgba(255, 250, 242, 0.94) 55%, rgba(255, 200, 87, 0.22)),
+        #fffaf2;
+      box-shadow: 6px 6px 0 rgba(23, 33, 50, 0.16);
+    }
+
+    body.anime-mode .screen-title,
+    body.anime-mode .timer-value,
+    body.anime-mode .friend-stat,
+    body.anime-mode .stat-number,
+    body.anime-mode .watch-gap {
+      letter-spacing: 0;
+      text-shadow: 2px 2px 0 rgba(184, 243, 219, 0.9);
+    }
+
+    body.anime-mode .primary-action,
+    body.anime-mode .watch-action,
+    body.anime-mode .quick-button {
+      border: 2px solid #172132;
+      background: linear-gradient(135deg, #087b75, #23b09f);
+      box-shadow: 4px 4px 0 #172132;
+    }
+
+    body.anime-mode .secondary-action,
+    body.anime-mode .goal-pill,
+    body.anime-mode .trend-badge,
+    body.anime-mode .xp-level,
+    body.anime-mode .reaction-btn.primary,
+    body.anime-mode .achievement-chip.unlocked {
+      border: 1px solid rgba(23, 33, 50, 0.18);
+      background: linear-gradient(135deg, #e8fff4, #fff1c8);
+    }
+
+    body.anime-mode .win-card {
+      border: 2px solid #172132;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0 18%, transparent 18% 100%),
+        linear-gradient(135deg, #087b75, #3d8fd9 58%, #ff6f61);
+      box-shadow: 7px 7px 0 rgba(23, 33, 50, 0.2);
+    }
+
+    body.anime-mode .win-card h2::after,
+    body.anime-mode .screen-title::after {
+      content: "!";
+      color: var(--coral);
+      margin-left: 2px;
+    }
+
+    body.anime-mode .quest-icon,
+    body.anime-mode .badge-icon,
+    body.anime-mode .friend-avatar {
+      border: 2px solid #172132;
+      background: linear-gradient(135deg, #b8f3db, #ffc857);
+    }
+
+    body.anime-mode .leader-badge,
+    body.anime-mode .streak-pill,
+    body.anime-mode .rare-card small {
+      border: 1px solid rgba(23, 33, 50, 0.18);
+      text-transform: uppercase;
+    }
+
+    body.anime-mode .leader-badge::before {
+      content: "S ";
+    }
+
+    body.anime-mode .rare-card small::before {
+      content: "Rare Drop: ";
+    }
+
+    body.anime-mode .tab-btn.active {
+      color: #172132;
+      border: 1px solid rgba(23, 33, 50, 0.2);
+      background: linear-gradient(135deg, #b8f3db, #fff1c8);
+    }
+
+    body.anime-mode .xp-bar span,
+    body.anime-mode .quest-progress span,
+    body.anime-mode .ranking-track span {
+      background: linear-gradient(90deg, #087b75, #ffc857, #ff6f61);
+    }
+
+    body.anime-mode .pet-photo,
+    body.anime-mode .avatar-option {
+      border: 2px solid #172132;
+      box-shadow: 3px 3px 0 rgba(23, 33, 50, 0.18);
+    }
+
     .side-panel {
       display: grid;
       gap: 14px;
@@ -1589,7 +1740,7 @@
     }
   </style>
 </head>
-<body>
+<body class="anime-mode">
   <main class="stage">
     <section class="intro" aria-label="PuffPause concept">
       <div class="eyebrow">
@@ -1599,25 +1750,25 @@
         iOS UI mockup
       </div>
       <h1>Make vaping visible.</h1>
-      <p>PuffPause tracks puffs, urges, and vape-free gaps so progress starts before perfection. The design is fast, private, and built around tiny wins.</p>
+      <p>PuffPause turns puff tracking into a supportive anime quest loop: notice urges, gain XP, unlock rare achievements, and keep the party cheering.</p>
       <div class="callouts">
         <div class="callout">
           <span class="callout-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 8v5l3 2" /><circle cx="12" cy="12" r="9" /></svg>
           </span>
-          <div><strong>Stretch the gap</strong><span>Current timer, next goal, and gentle delay prompts.</span></div>
+          <div><strong>Stretch the gap</strong><span>Current timer, next goal, and gentle delay quests.</span></div>
         </div>
         <div class="callout">
           <span class="callout-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg>
           </span>
-          <div><strong>Track the pattern</strong><span>Daily count, weekly trends, and common trigger moments.</span></div>
+          <div><strong>Track the pattern</strong><span>Daily count, weekly trends, and trigger intel.</span></div>
         </div>
         <div class="callout">
           <span class="callout-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg>
           </span>
-          <div><strong>Cash Mode</strong><span>Optional pet motivation for emotionally sticky milestones.</span></div>
+          <div><strong>Cash Mode</strong><span>Your companion avatar for quests and rare drops.</span></div>
         </div>
       </div>
     </section>
