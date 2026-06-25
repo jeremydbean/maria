@@ -6,7 +6,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>PuffPause Anime Quest UI Mockup</title>
+  <title>PuffPause Anime RPG UI Mockup</title>
   <style>
     :root {
       --bg: #f5f1ea;
@@ -1464,51 +1464,230 @@
     }
 
     body {
-      --bg: #fdf6ee;
-      --surface: #fffaf2;
-      --ink: #172132;
-      --muted: #657386;
-      --line: rgba(23, 33, 50, 0.16);
-      --teal: #087b75;
-      --teal-dark: #075753;
-      --mint: #b8f3db;
-      --mint-soft: #e8fff4;
-      --coral: #ff6f61;
-      --gold: #ffc857;
-      --blue: #3d8fd9;
+      --bg: #170c2d;
+      --surface: #fff2cf;
+      --ink: #25162f;
+      --muted: #75624c;
+      --line: rgba(93, 60, 22, 0.28);
+      --teal: #2fc6b5;
+      --teal-dark: #0f655f;
+      --mint: #a9f5dd;
+      --mint-soft: #f0ffe9;
+      --coral: #ff6d6d;
+      --gold: #ffd56a;
+      --blue: #5b7cff;
+      --violet: #6d38c7;
+      --ember: #ff9d4d;
+      --parchment: #fff2cf;
+      --panel: rgba(255, 242, 207, 0.94);
+      --shadow: 0 34px 90px rgba(11, 6, 24, 0.56);
       background:
-        linear-gradient(135deg, rgba(8, 123, 117, 0.12) 0 12%, transparent 12% 24%, rgba(255, 200, 87, 0.16) 24% 36%, transparent 36% 100%),
-        linear-gradient(165deg, #fff4df 0%, #e9fff4 48%, #fff7fa 100%);
+        radial-gradient(circle at 18% 18%, rgba(91, 124, 255, 0.28), transparent 23%),
+        radial-gradient(circle at 82% 12%, rgba(255, 213, 106, 0.22), transparent 20%),
+        radial-gradient(circle at 52% 78%, rgba(47, 198, 181, 0.19), transparent 27%),
+        linear-gradient(135deg, rgba(255, 213, 106, 0.11) 0 8%, transparent 8% 18%, rgba(255, 109, 109, 0.11) 18% 28%, transparent 28% 100%),
+        linear-gradient(155deg, #130920 0%, #241044 42%, #0d2935 74%, #28131e 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at 50% 40%, black, transparent 78%);
+    }
+
+    .stage {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .stage::before,
+    .stage::after {
+      content: "";
+      position: fixed;
+      pointer-events: none;
+      z-index: -1;
+      filter: drop-shadow(0 22px 45px rgba(0, 0, 0, 0.24));
+    }
+
+    .stage::before {
+      right: min(5vw, 62px);
+      top: 34px;
+      width: 250px;
+      height: 250px;
+      opacity: 0.82;
+      background:
+        conic-gradient(from 10deg, transparent 0 8%, rgba(255, 213, 106, 0.54) 8% 12%, transparent 12% 20%, rgba(91, 124, 255, 0.44) 20% 24%, transparent 24% 100%),
+        radial-gradient(circle, transparent 0 45%, rgba(255, 213, 106, 0.46) 46% 48%, transparent 49% 100%);
+      border-radius: 50%;
+    }
+
+    .stage::after {
+      left: -76px;
+      bottom: -46px;
+      width: 380px;
+      height: 220px;
+      opacity: 0.55;
+      background:
+        linear-gradient(135deg, transparent 0 42%, rgba(47, 198, 181, 0.34) 43% 47%, transparent 48%),
+        radial-gradient(ellipse at 50% 100%, rgba(255, 213, 106, 0.25), transparent 68%);
+    }
+
+    .intro {
+      color: #fff5d6;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.32);
+    }
+
+    .eyebrow {
+      color: #ffe08a;
+      background: rgba(12, 8, 28, 0.58);
+      border: 1px solid rgba(255, 213, 106, 0.36);
+      border-radius: 999px;
+      padding: 7px 13px 7px 8px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18), inset 0 0 18px rgba(255, 213, 106, 0.08);
     }
 
     .brand-mark,
     .mark {
-      border: 2px solid #172132;
-      box-shadow: 4px 4px 0 #172132;
+      border: 2px solid #ffe08a;
+      background:
+        radial-gradient(circle at 30% 20%, #fff7c1, transparent 34%),
+        linear-gradient(135deg, #6d38c7, #2fc6b5);
+      color: #fff9df;
+      box-shadow: 0 0 0 3px rgba(91, 124, 255, 0.28), 0 0 26px rgba(255, 213, 106, 0.45);
     }
 
     h1 {
-      color: #172132;
-      text-shadow: 3px 3px 0 #b8f3db, 6px 6px 0 rgba(255, 200, 87, 0.75);
+      max-width: 11ch;
+      color: #fff4bd;
+      text-shadow:
+        0 4px 0 #43206f,
+        0 8px 22px rgba(255, 109, 109, 0.36),
+        0 0 44px rgba(255, 213, 106, 0.36);
     }
 
-    .phone-shell {
-      background: #172132;
-      box-shadow: 12px 12px 0 rgba(8, 123, 117, 0.24), var(--shadow);
-    }
-
-    .phone {
-      background: #fffaf2;
-    }
-
-    .screen {
-      background:
-        linear-gradient(135deg, rgba(255, 200, 87, 0.14) 0 16%, transparent 16% 100%),
-        linear-gradient(180deg, #fffaf2 0%, #effff6 100%);
+    .intro p {
+      color: #f4dfb0;
     }
 
     .callout,
-    .panel-card,
+    .panel-card {
+      color: #fff3cf;
+      border: 1px solid rgba(255, 213, 106, 0.36);
+      background:
+        linear-gradient(135deg, rgba(255, 213, 106, 0.12), rgba(91, 124, 255, 0.08)),
+        rgba(15, 8, 31, 0.78);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .callout span,
+    .notes,
+    .notes a {
+      color: #dcc99b;
+    }
+
+    .callout-icon {
+      color: #1a0f2d;
+      background:
+        radial-gradient(circle at 30% 24%, #fff6c0, transparent 35%),
+        linear-gradient(135deg, #ffd56a, #ff9d4d);
+      box-shadow: 0 0 22px rgba(255, 213, 106, 0.34);
+    }
+
+    .phone-shell {
+      background:
+        linear-gradient(135deg, #f7d47d, #4b276f 18%, #120a22 72%, #2fc6b5);
+      border: 2px solid rgba(255, 229, 153, 0.75);
+      box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55), 0 0 0 6px rgba(255, 213, 106, 0.12), 0 0 50px rgba(91, 124, 255, 0.22);
+    }
+
+    .phone-shell::before {
+      background: #120a22;
+      border: 1px solid rgba(255, 213, 106, 0.28);
+    }
+
+    .phone {
+      border: 1px solid rgba(255, 231, 158, 0.55);
+      background: #180d2b;
+    }
+
+    .status-bar {
+      color: #fff2cb;
+      background: linear-gradient(180deg, rgba(26, 13, 45, 0.95), rgba(26, 13, 45, 0.74));
+    }
+
+    .signal i,
+    .battery::before,
+    .battery::after {
+      background: #ffe08a;
+    }
+
+    .battery {
+      border-color: #ffe08a;
+    }
+
+    .screen {
+      position: relative;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 16% 0%, rgba(255, 213, 106, 0.28), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(91, 124, 255, 0.18), transparent 30%),
+        linear-gradient(180deg, #3a1d5f 0, #1c1237 96px, #f6dfad 97px, #fdf0ca 100%);
+    }
+
+    .screen::before {
+      content: "";
+      position: absolute;
+      inset: 48px 0 78px;
+      pointer-events: none;
+      background:
+        linear-gradient(115deg, transparent 0 46%, rgba(255, 213, 106, 0.12) 47% 50%, transparent 51% 100%),
+        radial-gradient(circle at 12% 36%, rgba(47, 198, 181, 0.16), transparent 22%);
+    }
+
+    .app-header,
+    .content,
+    .tab-bar {
+      position: relative;
+      z-index: 1;
+    }
+
+    .screen-kicker {
+      color: #9f7828;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0;
+    }
+
+    .screen-title,
+    .timer-value,
+    .friend-stat,
+    .stat-number,
+    .watch-gap {
+      color: #25162f;
+      letter-spacing: 0;
+      text-shadow: 0 2px 0 #ffe5a3, 0 0 16px rgba(255, 213, 106, 0.52);
+    }
+
+    .app-header .screen-kicker,
+    .app-header .screen-title {
+      color: #fff2cb;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.36);
+    }
+
+    .icon-btn {
+      color: #fff4c9;
+      border: 1px solid rgba(255, 213, 106, 0.38);
+      background: rgba(255, 213, 106, 0.14);
+      box-shadow: inset 0 0 16px rgba(255, 213, 106, 0.12);
+    }
+
     .setup-card,
     .chart-card,
     .stat-card,
@@ -1518,100 +1697,220 @@
     .friend-card,
     .badge,
     .cash-card,
-    .rare-card {
-      border: 2px solid #172132;
-      box-shadow: 5px 5px 0 rgba(23, 33, 50, 0.14);
-    }
-
+    .rare-card,
+    .reason-card,
     .hero-timer,
     .craving-hero {
-      border: 2px solid #172132;
+      position: relative;
+      border: 2px solid #6b4420;
       background:
-        linear-gradient(135deg, rgba(184, 243, 219, 0.7), rgba(255, 250, 242, 0.94) 55%, rgba(255, 200, 87, 0.22)),
-        #fffaf2;
-      box-shadow: 6px 6px 0 rgba(23, 33, 50, 0.16);
+        linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 30%),
+        linear-gradient(180deg, #fff6d4, #f2d99f);
+      box-shadow: 0 5px 0 #8a5a2b, 0 16px 28px rgba(42, 20, 55, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.45);
     }
 
-    .screen-title,
-    .timer-value,
-    .friend-stat,
-    .stat-number,
-    .watch-gap {
-      letter-spacing: 0;
-      text-shadow: 2px 2px 0 rgba(184, 243, 219, 0.9);
+    .setup-card::before,
+    .chart-card::before,
+    .xp-card::before,
+    .quest-card::before,
+    .feed-card::before,
+    .cash-card::before,
+    .craving-hero::before,
+    .hero-timer::before,
+    .win-card::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid rgba(107, 68, 32, 0.2);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .hero-timer {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 12%, rgba(91, 124, 255, 0.3), transparent 34%),
+        radial-gradient(circle at 50% 46%, rgba(47, 198, 181, 0.26), transparent 32%),
+        linear-gradient(180deg, #fff8dc, #ead098);
+    }
+
+    .ring {
+      width: 136px;
+      height: 136px;
+      background:
+        conic-gradient(#ffd56a var(--progress, 74%), rgba(73, 49, 105, 0.22) 0),
+        radial-gradient(circle, rgba(91, 124, 255, 0.26), transparent 68%);
+      border: 3px solid #6b4420;
+      box-shadow: 0 0 0 6px rgba(255, 213, 106, 0.25), 0 0 34px rgba(47, 198, 181, 0.34);
+    }
+
+    .ring::before {
+      background:
+        radial-gradient(circle at 50% 28%, #fff9df, #f0d295);
+      border: 1px solid rgba(107, 68, 32, 0.22);
+    }
+
+    .goal-pill,
+    .trend-badge,
+    .xp-level,
+    .achievement-chip.unlocked,
+    .reaction-btn.primary {
+      color: #3d2468;
+      border: 1px solid rgba(107, 68, 32, 0.32);
+      background: linear-gradient(135deg, #ffe08a, #ffd3ef 58%, #b6fff0);
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.45);
     }
 
     .primary-action,
     .watch-action,
-    .quick-button {
-      border: 2px solid #172132;
-      background: linear-gradient(135deg, #087b75, #23b09f);
-      box-shadow: 4px 4px 0 #172132;
+    .quick-button,
+    .small-btn,
+    .preset.selected {
+      color: #fff8de;
+      border: 2px solid #ffe08a;
+      background:
+        radial-gradient(circle at 24% 10%, rgba(255, 255, 255, 0.32), transparent 30%),
+        linear-gradient(135deg, #6d38c7, #2f59d8 52%, #0fae9f);
+      box-shadow: 0 5px 0 #2b1749, 0 0 24px rgba(91, 124, 255, 0.34);
     }
 
     .secondary-action,
-    .goal-pill,
-    .trend-badge,
-    .xp-level,
-    .reaction-btn.primary,
-    .achievement-chip.unlocked {
-      border: 1px solid rgba(23, 33, 50, 0.18);
-      background: linear-gradient(135deg, #e8fff4, #fff1c8);
+    .small-btn.ghost,
+    .preset,
+    .chip,
+    .option,
+    .circle-btn,
+    .upload-control,
+    .reaction-btn {
+      color: #3d2468;
+      border: 1px solid rgba(107, 68, 32, 0.32);
+      background: linear-gradient(180deg, #fff8dc, #eed19a);
+    }
+
+    .option.selected,
+    .chip.selected {
+      color: #25162f;
+      border-color: #6d38c7;
+      background: linear-gradient(135deg, #ffe08a, #b6fff0);
+      box-shadow: 0 0 0 3px rgba(109, 56, 199, 0.12);
     }
 
     .win-card {
-      border: 2px solid #172132;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #ffe08a;
       background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0 18%, transparent 18% 100%),
-        linear-gradient(135deg, #087b75, #3d8fd9 58%, #ff6f61);
-      box-shadow: 7px 7px 0 rgba(23, 33, 50, 0.2);
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.34), transparent 26%),
+        radial-gradient(circle at 86% 0%, rgba(255, 213, 106, 0.42), transparent 30%),
+        linear-gradient(135deg, #6d38c7 0%, #2f59d8 46%, #0fae9f 74%, #ff6d6d 100%);
+      box-shadow: 0 6px 0 #2b1749, 0 24px 34px rgba(42, 20, 55, 0.28);
     }
 
     .win-card h2::after,
     .screen-title::after {
       content: "!";
-      color: var(--coral);
+      color: #ffd56a;
       margin-left: 2px;
+      text-shadow: 0 0 14px rgba(255, 213, 106, 0.62);
     }
 
     .quest-icon,
     .badge-icon,
     .friend-avatar {
-      border: 2px solid #172132;
-      background: linear-gradient(135deg, #b8f3db, #ffc857);
+      color: #25162f;
+      border: 2px solid #6b4420;
+      background:
+        radial-gradient(circle at 30% 20%, #fff9d5, transparent 34%),
+        linear-gradient(135deg, #ffd56a, #ff9d4d);
+      box-shadow: 0 3px 0 #8a5a2b;
     }
 
     .leader-badge,
     .streak-pill,
     .rare-card small {
-      border: 1px solid rgba(23, 33, 50, 0.18);
+      border: 1px solid rgba(107, 68, 32, 0.32);
       text-transform: uppercase;
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.35);
     }
 
     .leader-badge::before {
-      content: "S ";
+      content: "S-Rank ";
     }
 
     .rare-card small::before {
-      content: "Rare Drop: ";
+      content: "Loot Drop: ";
+    }
+
+    .tab-bar {
+      background:
+        linear-gradient(180deg, rgba(48, 25, 76, 0.94), rgba(24, 13, 42, 0.98));
+      border-top: 1px solid rgba(255, 213, 106, 0.32);
+      box-shadow: 0 -14px 22px rgba(24, 13, 42, 0.22);
+    }
+
+    .tab-btn {
+      color: #cdbbdf;
     }
 
     .tab-btn.active {
-      color: #172132;
-      border: 1px solid rgba(23, 33, 50, 0.2);
-      background: linear-gradient(135deg, #b8f3db, #fff1c8);
+      color: #25162f;
+      border: 1px solid #ffe08a;
+      background:
+        radial-gradient(circle at 40% 12%, #fff7c1, transparent 34%),
+        linear-gradient(135deg, #ffd56a, #b6fff0);
+      box-shadow: 0 0 20px rgba(255, 213, 106, 0.28);
+    }
+
+    .xp-bar,
+    .quest-progress,
+    .ranking-track,
+    .bar {
+      border: 1px solid rgba(107, 68, 32, 0.25);
+      background: rgba(54, 33, 74, 0.16);
+      box-shadow: inset 0 2px 6px rgba(54, 33, 74, 0.2);
     }
 
     .xp-bar span,
     .quest-progress span,
-    .ranking-track span {
-      background: linear-gradient(90deg, #087b75, #ffc857, #ff6f61);
+    .ranking-track span,
+    .bar span {
+      background: linear-gradient(90deg, #6d38c7, #5b7cff, #2fc6b5, #ffd56a);
+      box-shadow: 0 0 14px rgba(47, 198, 181, 0.36);
     }
 
     .pet-photo,
     .avatar-option {
-      border: 2px solid #172132;
-      box-shadow: 3px 3px 0 rgba(23, 33, 50, 0.18);
+      border: 2px solid #6b4420;
+      box-shadow: 0 4px 0 #8a5a2b, 0 0 18px rgba(255, 213, 106, 0.24);
+    }
+
+    .text-input,
+    .stepper-row {
+      border: 1px solid rgba(107, 68, 32, 0.36);
+      background: linear-gradient(180deg, #fff8dc, #eed19a);
+      color: #25162f;
+    }
+
+    .rank-row {
+      color: #3d2468;
+      border: 1px solid rgba(107, 68, 32, 0.22);
+      background: rgba(255, 248, 220, 0.72);
+    }
+
+    .rank-row.me {
+      color: #25162f;
+      background: linear-gradient(135deg, #ffe08a, #b6fff0);
+    }
+
+    .rare-card {
+      background:
+        radial-gradient(circle at 80% 10%, rgba(255, 213, 106, 0.3), transparent 30%),
+        linear-gradient(135deg, #fff8dc, #e8d1ff 50%, #d7fff6);
+    }
+
+    .palette .swatch {
+      border-color: rgba(255, 213, 106, 0.38);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
     }
 
     .side-panel {
@@ -1750,28 +2049,28 @@
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M7 12h10" /><path d="M12 7v10" /></svg>
         </span>
-        Anime Quest UI mockup
+        Anime MMO RPG mockup
       </div>
-      <h1>Make vaping visible.</h1>
-      <p>PuffPause turns puff tracking into a supportive anime quest loop: notice urges, gain XP, unlock rare achievements, and keep the party cheering.</p>
+      <h1>Enter the Craving Realm.</h1>
+      <p>PuffPause becomes a fantasy anime RPG where every urge is an encounter, every delay is XP, and your party helps you climb the weekly guild ranks.</p>
       <div class="callouts">
         <div class="callout">
           <span class="callout-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 8v5l3 2" /><circle cx="12" cy="12" r="9" /></svg>
           </span>
-          <div><strong>Stretch the gap</strong><span>Current timer, next goal, and gentle delay quests.</span></div>
+          <div><strong>Build your mana gap</strong><span>Current timer, next gate, and delay quests as RPG energy.</span></div>
         </div>
         <div class="callout">
           <span class="callout-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg>
           </span>
-          <div><strong>Track the pattern</strong><span>Daily count, weekly trends, and trigger intel.</span></div>
+          <div><strong>Scout the realm map</strong><span>Daily count, weekly trends, and trigger zones as battle intel.</span></div>
         </div>
         <div class="callout">
           <span class="callout-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg>
           </span>
-          <div><strong>Cash Mode</strong><span>Your companion avatar for quests and rare drops.</span></div>
+          <div><strong>Summon Cash</strong><span>Your companion avatar for quests, buffs, and rare loot drops.</span></div>
         </div>
       </div>
     </section>
@@ -1787,11 +2086,11 @@
             </span>
           </div>
 
-          <section class="screen active" id="screen-today" data-screen="today" aria-label="Today screen">
+          <section class="screen active" id="screen-today" data-screen="today" aria-label="Quest HUD screen">
             <header class="app-header">
               <div class="title-wrap">
-                <div class="screen-kicker">PuffPause</div>
-                <div class="screen-title">Today</div>
+                <div class="screen-kicker">Craving Realm</div>
+                <div class="screen-title">Quest HUD</div>
               </div>
               <button class="icon-btn" type="button" aria-label="Open settings">
                 <svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2a2 2 0 1 1-4 0V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1A2 2 0 1 1 4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 1 1 7.2 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1A2 2 0 1 1 20 7.2l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.8 1Z" /></svg>
@@ -1802,38 +2101,38 @@
                 <div class="ring" id="gap-ring">
                   <div class="ring-inner">
                     <div class="timer-value" id="gap-value">27</div>
-                    <div class="timer-label"><span>min</span><span>since your</span><span>last puff</span></div>
+                    <div class="timer-label"><span>min</span><span>since last</span><span>shadow hit</span></div>
                   </div>
                 </div>
-                <div class="goal-pill" id="goal-pill">Next goal: 30 min</div>
+                <div class="goal-pill" id="goal-pill">Next mana gate: 30 min</div>
               </div>
               <div class="action-stack">
                 <button class="primary-action" type="button" id="log-puff">
                   <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
-                  Log Puff
+                  Record Hit
                 </button>
                 <button class="secondary-action" type="button" id="log-urge">
                   <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z" /><path d="M12 11v.01" /></svg>
-                  Urge Only
+                  Dodge Urge
                 </button>
               </div>
               <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number" id="puff-count">14</div><div class="stat-label">puffs today</div></div>
-                <div class="stat-card"><div class="stat-number">1h</div><div class="stat-label">best gap</div></div>
-                <div class="stat-card"><div class="stat-number" id="urge-count">3</div><div class="stat-label">urges beat</div></div>
+                <div class="stat-card"><div class="stat-number" id="puff-count">14</div><div class="stat-label">hits today</div></div>
+                <div class="stat-card"><div class="stat-number">1h</div><div class="stat-label">best mana gap</div></div>
+                <div class="stat-card"><div class="stat-number" id="urge-count">3</div><div class="stat-label">urges dodged</div></div>
               </div>
               <div class="cash-card">
                 <div class="pet-photo" aria-label="Cash illustration"><img class="cash-avatar-img" src="assets/cash-dog-avatar.png" alt="Cartoon dog avatar for Cash" /></div>
-                <div class="pet-text"><strong><span class="pet-name">Cash</span> Mode</strong><span><span class="pet-name">Cash</span> gets bonus couch time when you make it to 30 minutes.</span></div>
+                <div class="pet-text"><strong><span class="pet-name">Cash</span> Companion</strong><span><span class="pet-name">Cash</span> grants a loyalty buff at the 30-minute gate.</span></div>
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
-              <button class="tab-btn active" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>Today</span></button>
-              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
-              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
+              <button class="tab-btn active" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>HUD</span></button>
+              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Battle</span></button>
+              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Map</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
-              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
-              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Guild</span></button>
+              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Loot</span></button>
             </nav>
           </section>
 
@@ -1841,7 +2140,7 @@
             <header class="app-header">
               <div class="title-wrap">
                 <div class="screen-kicker">Setup</div>
-                <div class="screen-title">Your goal</div>
+                <div class="screen-title">Your oath</div>
               </div>
               <button class="icon-btn" type="button" data-target="today" aria-label="Skip setup">
                 <svg viewBox="0 0 24 24"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
@@ -1855,7 +2154,7 @@
                   <button class="option selected" type="button"><span>Cut down gradually</span><span class="check-dot"></span></button>
                   <button class="option" type="button"><span>Quit completely</span><span class="check-dot"></span></button>
                   <button class="option" type="button"><span>Understand my habit</span><span class="check-dot"></span></button>
-                  <button class="option" type="button"><span>Support someone else</span><span class="check-dot"></span></button>
+                  <button class="option" type="button"><span>Join as ally support</span><span class="check-dot"></span></button>
                 </div>
                 <div class="setup-footer">
                   <button class="small-btn" type="button" data-target="baseline">Continue</button>
@@ -1882,15 +2181,15 @@
             </header>
             <div class="content">
               <div class="setup-card">
-                <h2>About how often do you vape?</h2>
-                <p>Guessing is allowed. The app gets smarter once you start tracking.</p>
+                <h2>Set your starting enemy level</h2>
+                <p>Guessing is allowed. Your map gets smarter once you start logging encounters.</p>
                 <div class="baseline-field">
-                  <label>Estimated puffs per day</label>
+                  <label>Estimated hits per day</label>
                   <div class="stepper-row">
                     <span id="baseline-value">40</span>
                     <div class="stepper-buttons">
-                      <button class="circle-btn" type="button" id="baseline-minus" aria-label="Decrease puffs">-</button>
-                      <button class="circle-btn" type="button" id="baseline-plus" aria-label="Increase puffs">+</button>
+                      <button class="circle-btn" type="button" id="baseline-minus" aria-label="Decrease hits">-</button>
+                      <button class="circle-btn" type="button" id="baseline-plus" aria-label="Increase hits">+</button>
                     </div>
                   </div>
                 </div>
@@ -1918,11 +2217,11 @@
             </nav>
           </section>
 
-          <section class="screen" id="screen-cash" data-screen="cash" aria-label="Cash Mode setup screen">
+          <section class="screen" id="screen-cash" data-screen="cash" aria-label="Companion Mode setup screen">
             <header class="app-header">
               <div class="title-wrap">
-                <div class="screen-kicker">Optional</div>
-                <div class="screen-title">Cash Mode</div>
+                <div class="screen-kicker">Companion</div>
+                <div class="screen-title">Companion Mode</div>
               </div>
               <button class="icon-btn" type="button" data-target="baseline" aria-label="Back to baseline">
                 <svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg>
@@ -1932,8 +2231,8 @@
               <div class="setup-card">
                 <div class="pet-setup">
                   <div class="pet-photo" aria-label="Selected motivation avatar"><img class="cash-avatar-img" src="assets/cash-dog-avatar.png" alt="Cartoon dog avatar for Cash" /></div>
-                  <h2>Do it for your favorite little witness.</h2>
-                  <p>Add a pet or person who makes the next small win feel worth it.</p>
+                  <h2>Summon your favorite companion.</h2>
+                  <p>Add a pet or person who makes every small victory feel like party progress.</p>
                   <label class="field-label" for="support-name">Pet or person name</label>
                   <input class="text-input" id="support-name" value="Cash" aria-label="Pet or person name" />
                   <div class="baseline-field">
@@ -1978,8 +2277,8 @@
           <section class="screen" id="screen-craving" data-screen="craving" aria-label="Craving screen">
             <header class="app-header">
               <div class="title-wrap">
-                <div class="screen-kicker">Right now</div>
-                <div class="screen-title">Craving</div>
+                <div class="screen-kicker">Encounter</div>
+                <div class="screen-title">Battle</div>
               </div>
               <button class="icon-btn" type="button" aria-label="Open notes">
                 <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z" /></svg>
@@ -1987,7 +2286,7 @@
             </header>
             <div class="content">
               <div class="craving-hero">
-                <div class="screen-kicker">Want to wait it out?</div>
+                <div class="screen-kicker">Hold the line?</div>
                 <div class="breath-circle"><span id="timer-readout">3:00</span></div>
                 <div class="preset-grid">
                   <button class="preset" type="button" data-minutes="1">1m</button>
@@ -1996,30 +2295,30 @@
                   <button class="preset" type="button" data-minutes="10">10m</button>
                 </div>
                 <div class="action-stack">
-                  <button class="primary-action" type="button" id="start-delay">Start Delay Timer</button>
-                  <button class="secondary-action" type="button" id="log-puff-alt">Log Puff Instead</button>
+                  <button class="primary-action" type="button" id="start-delay">Cast Delay Shield</button>
+                  <button class="secondary-action" type="button" id="log-puff-alt">Record Hit Instead</button>
                 </div>
               </div>
               <div class="reason-card">
-                <small>Your reason</small>
-                <strong>More walks with Cash, less reaching without thinking.</strong>
+                <small>Companion oath</small>
+                <strong>More walks with Cash, fewer automatic shadow hits.</strong>
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
-              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>Today</span></button>
-              <button class="tab-btn active" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
-              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
+              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>HUD</span></button>
+              <button class="tab-btn active" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Battle</span></button>
+              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Map</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
-              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
-              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Guild</span></button>
+              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Loot</span></button>
             </nav>
           </section>
 
-          <section class="screen" id="screen-trends" data-screen="trends" aria-label="Trends screen">
+          <section class="screen" id="screen-trends" data-screen="trends" aria-label="Realm map screen">
             <header class="app-header">
               <div class="title-wrap">
-                <div class="screen-kicker">Patterns</div>
-                <div class="screen-title">Trends</div>
+                <div class="screen-kicker">Realm Intel</div>
+                <div class="screen-title">Map</div>
               </div>
               <button class="icon-btn" type="button" aria-label="Filter trends">
                 <svg viewBox="0 0 24 24"><path d="M4 6h16" /><path d="M7 12h10" /><path d="M10 18h4" /></svg>
@@ -2029,12 +2328,12 @@
               <div class="chart-card">
                 <div class="trend-head">
                   <div>
-                    <div class="screen-kicker">This week</div>
-                    <strong>Down 12%</strong>
+                    <div class="screen-kicker">This campaign</div>
+                    <strong>Threat -12%</strong>
                   </div>
-                  <span class="trend-badge">9 urges beat</span>
+                  <span class="trend-badge">9 urges defeated</span>
                 </div>
-                <svg class="chart" viewBox="0 0 320 170" aria-label="Seven day puff trend chart">
+                <svg class="chart" viewBox="0 0 320 170" aria-label="Seven day encounter trend chart">
                   <line x1="8" y1="145" x2="312" y2="145" stroke="#e3e7df" stroke-width="2" />
                   <line x1="8" y1="102" x2="312" y2="102" stroke="#edf0ea" stroke-width="1.5" />
                   <line x1="8" y1="59" x2="312" y2="59" stroke="#edf0ea" stroke-width="1.5" />
@@ -2044,13 +2343,13 @@
                   <circle cx="308" cy="122" r="13" fill="rgba(14,107,104,.16)" />
                 </svg>
                 <div class="stats-grid">
-                  <div class="stat-card"><div class="stat-number">41</div><div class="stat-label">avg gap min</div></div>
-                  <div class="stat-card"><div class="stat-number">3h</div><div class="stat-label">best weekly gap</div></div>
-                  <div class="stat-card"><div class="stat-number">-4</div><div class="stat-label">puffs vs avg</div></div>
+                  <div class="stat-card"><div class="stat-number">41</div><div class="stat-label">avg shield min</div></div>
+                  <div class="stat-card"><div class="stat-number">3h</div><div class="stat-label">best weekly shield</div></div>
+                  <div class="stat-card"><div class="stat-number">-4</div><div class="stat-label">hits vs avg</div></div>
                 </div>
               </div>
               <div class="chart-card">
-                <div class="screen-kicker">Common moments</div>
+                <div class="screen-kicker">Enemy spawn zones</div>
                 <div class="moment-list">
                   <div class="moment"><span>Morning</span><div class="bar"><span style="width: 72%"></span></div><span>32%</span></div>
                   <div class="moment"><span>Driving</span><div class="bar"><span style="width: 55%; background: var(--blue)"></span></div><span>24%</span></div>
@@ -2059,20 +2358,20 @@
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
-              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>Today</span></button>
-              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
-              <button class="tab-btn active" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
+              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>HUD</span></button>
+              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Battle</span></button>
+              <button class="tab-btn active" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Map</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
-              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
-              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Guild</span></button>
+              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Loot</span></button>
             </nav>
           </section>
 
           <section class="screen" id="screen-quests" data-screen="quests" aria-label="Quests screen">
             <header class="app-header">
               <div class="title-wrap">
-                <div class="screen-kicker">XP + quests</div>
-                <div class="screen-title">Quests</div>
+                <div class="screen-kicker">Quest Log</div>
+                <div class="screen-title">Campaign</div>
               </div>
               <button class="icon-btn" type="button" aria-label="Quest log">
                 <svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
@@ -2080,13 +2379,13 @@
             </header>
             <div class="content">
               <div class="win-card">
-                <small>Level 4</small>
-                <h2>Gap Builder</h2>
+                <small>Mage Level 4</small>
+                <h2>Gap Warden</h2>
                 <button class="share-btn" type="button"><span id="xp-count">680 XP</span></button>
               </div>
               <div class="xp-card">
                 <div class="xp-head">
-                  <span>Next unlock: Morning Shield</span>
+                  <span>Next spell unlock: Dawn Shield</span>
                   <span class="xp-level">+320 XP</span>
                 </div>
                 <div class="xp-bar" style="--xp: 68%"><span id="xp-fill"></span></div>
@@ -2095,49 +2394,49 @@
                 <div class="quest-card" id="quest-urge-card">
                   <div class="quest-icon">+15</div>
                   <div>
-                    <strong>Catch 5 urges</strong>
-                    <p>Log urges before acting. Progress: <span id="quest-urge-count">3</span>/5</p>
+                    <strong>Dodge 5 shadow urges</strong>
+                    <p>Mark urges before acting. Battle count: <span id="quest-urge-count">3</span>/5</p>
                     <div class="quest-progress" style="--quest: 60%"><span id="quest-urge-fill"></span></div>
                   </div>
                 </div>
                 <div class="quest-card complete">
                   <div class="quest-icon">+40</div>
                   <div>
-                    <strong>First hour quest</strong>
-                    <p>Reach one 60-minute vape-free gap today.</p>
+                    <strong>First Gate Quest</strong>
+                    <p>Hold one 60-minute mana shield today.</p>
                     <div class="quest-progress" style="--quest: 100%"><span></span></div>
                   </div>
                 </div>
                 <div class="quest-card">
                   <div class="quest-icon">+25</div>
                   <div>
-                    <strong>Cash walk bonus</strong>
-                    <p>Complete a craving timer, then take a 3-minute walk.</p>
+                    <strong>Cash loyalty quest</strong>
+                    <p>Complete a battle timer, then take a 3-minute companion walk.</p>
                     <div class="quest-progress" style="--quest: 40%"><span></span></div>
                   </div>
                 </div>
               </div>
               <div class="achievement-ribbon">
-                <span class="achievement-chip unlocked">Morning Shield</span>
+                <span class="achievement-chip unlocked">Dawn Shield</span>
                 <span class="achievement-chip unlocked">Urge Scout</span>
-                <span class="achievement-chip">Weekend Warrior</span>
+                <span class="achievement-chip">Weekend Knight</span>
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
-              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>Today</span></button>
-              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
-              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
+              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>HUD</span></button>
+              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Battle</span></button>
+              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Map</span></button>
               <button class="tab-btn active" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
-              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
-              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Guild</span></button>
+              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Loot</span></button>
             </nav>
           </section>
 
-          <section class="screen" id="screen-social" data-screen="social" aria-label="Social screen">
+          <section class="screen" id="screen-social" data-screen="social" aria-label="Guild screen">
             <header class="app-header">
               <div class="title-wrap">
-                <div class="screen-kicker">Friends</div>
-                <div class="screen-title">Social</div>
+                <div class="screen-kicker">Guild</div>
+                <div class="screen-title">Guild</div>
               </div>
               <button class="icon-btn" type="button" aria-label="Add friend">
                 <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M19 8v6" /><path d="M22 11h-6" /></svg>
@@ -2145,34 +2444,34 @@
             </header>
             <div class="content">
               <div class="win-card">
-                <small>Weekly leaders</small>
-                <h2>Maya leads by 2 quests</h2>
-                <button class="share-btn" type="button">Cheer the circle</button>
+                <small>Guild leaderboard</small>
+                <h2>Maya holds the crown by 2 quests</h2>
+                <button class="share-btn" type="button">Rally the guild</button>
               </div>
               <div class="social-summary">
                 <div class="friend-card">
                   <div class="friend-row">
                     <div class="friend-avatar"><img src="assets/cash-dog-avatar.png" alt="Cash avatar" /></div>
-                    <div class="friend-meta"><strong>You</strong><span>Level 4</span></div>
+                    <div class="friend-meta"><strong>You</strong><span>Gap Warden L4</span></div>
                   </div>
                   <div class="friend-stat">7</div>
-                  <div class="stat-label">quests this week</div>
+                  <div class="stat-label">guild quests</div>
                   <span class="streak-pill">4-day streak</span>
                 </div>
                 <div class="friend-card">
                   <div class="friend-row">
                     <div class="friend-avatar">M</div>
-                    <div class="friend-meta"><strong>Maya</strong><span>Weekly leader</span></div>
+                    <div class="friend-meta"><strong>Maya</strong><span>Crown holder</span></div>
                   </div>
                   <div class="friend-stat">9</div>
-                  <div class="stat-label">quests this week</div>
+                  <div class="stat-label">guild quests</div>
                   <span class="leader-badge">Leader</span>
                 </div>
               </div>
               <div class="xp-card">
                 <div class="xp-head">
-                  <span>Circle ranking</span>
-                  <span class="xp-level">Private</span>
+                  <span>Guild ranking</span>
+                  <span class="xp-level">Party-only</span>
                 </div>
                 <div class="leaderboard">
                   <div class="rank-row"><span>1</span><span>Maya</span><span>9 quests</span></div>
@@ -2194,11 +2493,11 @@
                     <div class="friend-meta"><strong>Jordan</strong><span>12 min ago</span></div>
                     <span class="leader-badge">Rare</span>
                   </div>
-                  <p>Unlocked “Cold Open”: first 90 minutes of the morning vape-free.</p>
+                  <p>Unlocked “Dawn Opener”: first 90 minutes of morning mana shield.</p>
                   <div class="reaction-row">
-                    <button class="reaction-btn primary like-btn" type="button">Like 18</button>
-                    <button class="reaction-btn" type="button">Cheer</button>
-                    <button class="reaction-btn" type="button">Comment</button>
+                    <button class="reaction-btn primary like-btn" type="button">Boost 18</button>
+                    <button class="reaction-btn" type="button">Rally</button>
+                    <button class="reaction-btn" type="button">Reply</button>
                   </div>
                 </div>
                 <div class="feed-card">
@@ -2207,11 +2506,11 @@
                     <div class="friend-meta"><strong>Ari</strong><span>34 min ago</span></div>
                     <span class="streak-pill">6-day streak</span>
                   </div>
-                  <p>Shared a 10% weekly reduction. Progress, not perfection.</p>
+                  <p>Weakened the weekly shadow meter by 10%. Progress, not perfection.</p>
                   <div class="reaction-row">
-                    <button class="reaction-btn primary like-btn" type="button">Like 12</button>
-                    <button class="reaction-btn" type="button">Support</button>
-                    <button class="reaction-btn" type="button">Comment</button>
+                    <button class="reaction-btn primary like-btn" type="button">Boost 12</button>
+                    <button class="reaction-btn" type="button">Buff</button>
+                    <button class="reaction-btn" type="button">Reply</button>
                   </div>
                 </div>
                 <div class="feed-card">
@@ -2220,42 +2519,42 @@
                     <div class="friend-meta"><strong>Maya</strong><span>1 hr ago</span></div>
                     <span class="leader-badge">Leader</span>
                   </div>
-                  <p>Completed “Cash walk bonus” and moved into first place this week.</p>
+                  <p>Completed “Cash loyalty quest” and moved into first place this week.</p>
                   <div class="reaction-row">
-                    <button class="reaction-btn primary like-btn" type="button">Like 24</button>
-                    <button class="reaction-btn" type="button">Nice gap</button>
-                    <button class="reaction-btn" type="button">Comment</button>
+                    <button class="reaction-btn primary like-btn" type="button">Boost 24</button>
+                    <button class="reaction-btn" type="button">Nice shield</button>
+                    <button class="reaction-btn" type="button">Reply</button>
                   </div>
                 </div>
               </div>
               <div class="xp-card">
                 <div class="xp-head">
-                  <span>Rare achievements</span>
-                  <span class="xp-level">Low-frequency badges</span>
+                  <span>Rare loot table</span>
+                  <span class="xp-level">Low-drop badges</span>
                 </div>
                 <div class="rare-grid">
-                  <div class="rare-card"><small>Rare</small><strong>Cold Open</strong></div>
-                  <div class="rare-card"><small>Epic</small><strong>Weekend Warrior</strong></div>
-                  <div class="rare-card"><small>Rare</small><strong>Stress Pivot</strong></div>
-                  <div class="rare-card"><small>Legend</small><strong>First Full Day</strong></div>
+                  <div class="rare-card"><small>Rare</small><strong>Dawn Opener</strong></div>
+                  <div class="rare-card"><small>Epic</small><strong>Weekend Knight</strong></div>
+                  <div class="rare-card"><small>Rare</small><strong>Chaos Pivot</strong></div>
+                  <div class="rare-card"><small>Legend</small><strong>First Full Realm</strong></div>
                 </div>
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
-              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>Today</span></button>
-              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
-              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
+              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>HUD</span></button>
+              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Battle</span></button>
+              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Map</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
-              <button class="tab-btn active" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
-              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
+              <button class="tab-btn active" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Guild</span></button>
+              <button class="tab-btn" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Loot</span></button>
             </nav>
           </section>
 
-          <section class="screen" id="screen-wins" data-screen="wins" aria-label="Wins screen">
+          <section class="screen" id="screen-wins" data-screen="wins" aria-label="Loot screen">
             <header class="app-header">
               <div class="title-wrap">
-                <div class="screen-kicker">Progress</div>
-                <div class="screen-title">Wins</div>
+                <div class="screen-kicker">Rewards</div>
+                <div class="screen-title">Loot</div>
               </div>
               <button class="icon-btn" type="button" aria-label="Share latest win">
                 <svg viewBox="0 0 24 24"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7" /><path d="m16 6-4-4-4 4" /><path d="M12 2v13" /></svg>
@@ -2263,35 +2562,35 @@
             </header>
             <div class="content">
               <div class="win-card">
-                <small>Achievement unlocked</small>
-                <h2>First hour vape-free</h2>
-                <button class="share-btn" type="button">Share Card</button>
+                <small>Legendary loot unlocked</small>
+                <h2>First Hour Shield</h2>
+                <button class="share-btn" type="button">Share Loot</button>
               </div>
               <div class="xp-card">
                 <div class="xp-head">
-                  <span>Achievement score</span>
+                  <span>Loot score</span>
                   <span class="xp-level">12 unlocked</span>
                 </div>
                 <div class="xp-bar" style="--xp: 48%"><span></span></div>
               </div>
               <div class="badge-grid">
-                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M12 8v5l3 2" /><circle cx="12" cy="12" r="9" /></svg></span><strong>30 minute gap</strong></div>
-                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="m7 14 3 3 7-7" /><circle cx="12" cy="12" r="9" /></svg></span><strong>Urge logged</strong></div>
-                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="m7 15 4-4 3 3 5-7" /></svg></span><strong>Usage down 10%</strong></div>
-                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M11 17a3 3 0 0 1-6 0c0-2.5 3-5 3-5s3 2.5 3 5Z" /><path d="M19 17a3 3 0 0 1-6 0c0-2.5 3-5 3-5s3 2.5 3 5Z" /></svg></span><strong>Cash walk unlocked</strong></div>
+                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M12 8v5l3 2" /><circle cx="12" cy="12" r="9" /></svg></span><strong>30 minute shield</strong></div>
+                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="m7 14 3 3 7-7" /><circle cx="12" cy="12" r="9" /></svg></span><strong>Urge scouted</strong></div>
+                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="m7 15 4-4 3 3 5-7" /></svg></span><strong>Shadow down 10%</strong></div>
+                <div class="badge"><span class="badge-icon"><svg viewBox="0 0 24 24"><path d="M11 17a3 3 0 0 1-6 0c0-2.5 3-5 3-5s3 2.5 3 5Z" /><path d="M19 17a3 3 0 0 1-6 0c0-2.5 3-5 3-5s3 2.5 3 5Z" /></svg></span><strong>Cash quest unlocked</strong></div>
               </div>
               <div class="cash-card">
                 <div class="pet-photo" aria-label="Cash illustration"><img class="cash-avatar-img" src="assets/cash-dog-avatar.png" alt="Cartoon dog avatar for Cash" /></div>
-                <div class="pet-text"><strong><span class="pet-name">Cash</span> is proud-ish</strong><span>That was a tiny win. Tiny wins count.</span></div>
+                <div class="pet-text"><strong><span class="pet-name">Cash</span> casts proud-ish</strong><span>Small victories still count toward the campaign.</span></div>
               </div>
             </div>
             <nav class="tab-bar" aria-label="Main navigation">
-              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>Today</span></button>
-              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Crave</span></button>
-              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Trends</span></button>
+              <button class="tab-btn" type="button" data-target="today"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 10v10h14V10" /></svg><span>HUD</span></button>
+              <button class="tab-btn" type="button" data-target="craving"><svg viewBox="0 0 24 24"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-4 4-8 4-8Z" /><path d="M6 14a6 6 0 0 0 12 0" /></svg><span>Battle</span></button>
+              <button class="tab-btn" type="button" data-target="trends"><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg><span>Map</span></button>
               <button class="tab-btn" type="button" data-target="quests"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg><span>Quests</span></button>
-              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Social</span></button>
-              <button class="tab-btn active" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Wins</span></button>
+              <button class="tab-btn" type="button" data-target="social"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.9" /><path d="M16 3.1a4 4 0 0 1 0 7.8" /></svg><span>Guild</span></button>
+              <button class="tab-btn active" type="button" data-target="wins"><svg viewBox="0 0 24 24"><path d="M12 17.5 6.5 21l1.5-6.3L3 10.4l6.6-.6L12 3.8l2.4 6 6.6.6-5 4.3 1.5 6.3z" /></svg><span>Loot</span></button>
             </nav>
           </section>
 
@@ -2301,20 +2600,20 @@
 
       <aside class="side-panel" aria-label="Mockup controls">
         <div class="panel-card">
-          <h3>Prototype Screens</h3>
+          <h3>Realm Screens</h3>
           <div class="mini-screen-grid">
-            <button class="mini-screen active" type="button" data-target="today"><span>Main</span><strong>Today tracker</strong></button>
-            <button class="mini-screen" type="button" data-target="craving"><span>Support</span><strong>Craving timer</strong></button>
-            <button class="mini-screen" type="button" data-target="trends"><span>Insight</span><strong>Usage trends</strong></button>
+            <button class="mini-screen active" type="button" data-target="today"><span>Main</span><strong>Quest HUD</strong></button>
+            <button class="mini-screen" type="button" data-target="craving"><span>Buff</span><strong>Battle timer</strong></button>
+            <button class="mini-screen" type="button" data-target="trends"><span>Insight</span><strong>Realm map</strong></button>
             <button class="mini-screen" type="button" data-target="quests"><span>Game</span><strong>Quests + XP</strong></button>
-            <button class="mini-screen" type="button" data-target="social"><span>Friends</span><strong>Social feed</strong></button>
-            <button class="mini-screen" type="button" data-target="wins"><span>Reward</span><strong>Achievements</strong></button>
-            <button class="mini-screen" type="button" data-target="onboarding"><span>Setup</span><strong>Goal selection</strong></button>
-            <button class="mini-screen" type="button" data-target="cash"><span>Personal</span><strong>Cash Mode</strong></button>
+            <button class="mini-screen" type="button" data-target="social"><span>Guild</span><strong>Guild feed</strong></button>
+            <button class="mini-screen" type="button" data-target="wins"><span>Reward</span><strong>Loot Vault</strong></button>
+            <button class="mini-screen" type="button" data-target="onboarding"><span>Setup</span><strong>Oath selection</strong></button>
+            <button class="mini-screen" type="button" data-target="cash"><span>Personal</span><strong>Companion Mode</strong></button>
           </div>
         </div>
         <div class="panel-card">
-          <h3>Palette</h3>
+          <h3>RPG Palette</h3>
           <div class="palette" aria-label="Color palette">
             <span class="swatch" style="background: #0e6b68"></span>
             <span class="swatch" style="background: #bfe9d4"></span>
@@ -2324,14 +2623,14 @@
           </div>
         </div>
         <div class="panel-card">
-          <h3>Design Notes</h3>
+          <h3>World Notes</h3>
           <ul class="notes">
-            <li>One-handed logging is the primary interaction.</li>
-            <li>Gap-building is rewarded before full quitting.</li>
-            <li>Quests and XP reward tracking, delaying, and recovery.</li>
-            <li>Social progress is opt-in and centered on encouragement.</li>
-            <li>Cash Mode gives the app a personal reason to come back.</li>
-            <li><a href="device-mockups.html">Apple Watch and widget mockups</a> support quick logging away from the app.</li>
+            <li>One-handed logging is treated like a fast combat action.</li>
+            <li>Gap-building becomes mana shielding before full quitting.</li>
+            <li>Quests and XP reward scouting, delaying, and recovery.</li>
+            <li>Guild progress is opt-in and centered on encouragement.</li>
+            <li>Companion Mode gives the campaign a personal reason to come back.</li>
+            <li><a href="device-mockups.html">Apple Watch and widget companion mockups</a> support quick actions outside the realm.</li>
           </ul>
         </div>
       </aside>
@@ -2423,9 +2722,9 @@
       button.addEventListener("click", () => {
         const match = button.textContent.match(/(\d+)/);
         const count = match ? Number(match[1]) + 1 : 1;
-        button.textContent = `Liked ${count}`;
+        button.textContent = `Boosted ${count}`;
         button.classList.add("primary");
-        showToast("Support sent.");
+        showToast("Guild boost sent.");
       });
     });
 
@@ -2460,7 +2759,7 @@
       uploadedAvatarUrl = URL.createObjectURL(file);
       document.querySelectorAll(".avatar-option").forEach((item) => item.classList.remove("selected"));
       setAvatarImage(uploadedAvatarUrl, "Uploaded pet or person photo");
-      showToast("Photo added to Cash Mode.");
+      showToast("Portrait added to Companion Mode.");
     });
 
     supportName.addEventListener("input", () => {
@@ -2475,8 +2774,8 @@
       puffCount.textContent = puffs;
       gapValue.textContent = "0";
       gapRing.style.setProperty("--progress", "0%");
-      goalPill.textContent = "The next gap starts now";
-      addXp(5, "for honest tracking.");
+      goalPill.textContent = "A new shield begins now";
+      addXp(5, "for logging the encounter.");
     });
 
     document.getElementById("log-puff-alt").addEventListener("click", () => {
@@ -2488,7 +2787,7 @@
       urges += 1;
       urgeCount.textContent = urges;
       updateUrgeQuest();
-      addXp(15, "for catching an urge.");
+      addXp(15, "for dodging a shadow urge.");
     });
 
     document.getElementById("baseline-minus").addEventListener("click", () => {
@@ -2511,7 +2810,7 @@
     });
 
     document.getElementById("start-delay").addEventListener("click", () => {
-      addXp(10, "for starting a delay quest.");
+      addXp(10, "for casting Delay Shield.");
     });
   </script>
 </body>

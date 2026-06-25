@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PuffPause Watch + Widget Mockups</title>
+  <title>PuffPause RPG Watch + Widget Mockups</title>
   <style>
     :root {
       --bg: #f5f1ea;
@@ -506,6 +506,196 @@
       line-height: 1.42;
     }
 
+    body {
+      --bg: #170c2d;
+      --surface: #fff2cf;
+      --ink: #25162f;
+      --muted: #75624c;
+      --line: rgba(93, 60, 22, 0.28);
+      --teal: #2fc6b5;
+      --mint: #a9f5dd;
+      --mint-soft: #f0ffe9;
+      --coral: #ff6d6d;
+      --gold: #ffd56a;
+      --blue: #5b7cff;
+      color: #fff5d6;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(91, 124, 255, 0.28), transparent 24%),
+        radial-gradient(circle at 84% 10%, rgba(255, 213, 106, 0.24), transparent 21%),
+        radial-gradient(circle at 52% 82%, rgba(47, 198, 181, 0.2), transparent 28%),
+        linear-gradient(155deg, #130920 0%, #241044 42%, #0d2935 74%, #28131e 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at 50% 35%, black, transparent 76%);
+    }
+
+    .brand {
+      color: #ffe08a;
+    }
+
+    .mark {
+      border: 2px solid #ffe08a;
+      background:
+        radial-gradient(circle at 30% 20%, #fff7c1, transparent 34%),
+        linear-gradient(135deg, #6d38c7, #2fc6b5);
+      box-shadow: 0 0 26px rgba(255, 213, 106, 0.45);
+    }
+
+    .back-link {
+      color: #fff2cb;
+      border-color: rgba(255, 213, 106, 0.34);
+      background: rgba(15, 8, 31, 0.72);
+      box-shadow: inset 0 0 18px rgba(255, 213, 106, 0.08);
+    }
+
+    h1 {
+      color: #fff4bd;
+      text-shadow: 0 4px 0 #43206f, 0 0 44px rgba(255, 213, 106, 0.36);
+    }
+
+    .lede,
+    .section-head p {
+      color: #f4dfb0;
+    }
+
+    .section-head h2 {
+      color: #fff4bd;
+      text-shadow: 0 3px 0 #43206f;
+    }
+
+    .watch-board,
+    .widget-board,
+    .note-card {
+      border: 1px solid rgba(255, 213, 106, 0.36);
+      background:
+        linear-gradient(135deg, rgba(255, 213, 106, 0.12), rgba(91, 124, 255, 0.08)),
+        rgba(15, 8, 31, 0.78);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .watch-label,
+    .device-label {
+      color: #ffe08a;
+    }
+
+    .watch,
+    .phone-frame {
+      border: 2px solid rgba(255, 229, 153, 0.75);
+      background:
+        linear-gradient(135deg, #f7d47d, #4b276f 18%, #120a22 72%, #2fc6b5);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.48), 0 0 0 5px rgba(255, 213, 106, 0.12);
+    }
+
+    .watch::before,
+    .watch::after {
+      background: #120a22;
+      border: 1px solid rgba(255, 213, 106, 0.24);
+    }
+
+    .crown {
+      background: #ffe08a;
+    }
+
+    .watch-screen,
+    .phone-screen,
+    .home-screen {
+      color: #25162f;
+      border: 1px solid rgba(255, 231, 158, 0.55);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(91, 124, 255, 0.24), transparent 28%),
+        radial-gradient(circle at 84% 82%, rgba(47, 198, 181, 0.2), transparent 30%),
+        linear-gradient(180deg, #fff8dc, #ead098);
+    }
+
+    .watch-small,
+    .widget-kicker,
+    .note-card p {
+      color: #75624c;
+    }
+
+    .watch-gap,
+    .widget-number,
+    .lock-time strong {
+      color: #25162f;
+      text-shadow: 0 2px 0 #ffe5a3, 0 0 16px rgba(255, 213, 106, 0.52);
+    }
+
+    .watch-action,
+    .quick-button {
+      color: #fff8de;
+      border: 2px solid #ffe08a;
+      background:
+        radial-gradient(circle at 24% 10%, rgba(255, 255, 255, 0.32), transparent 30%),
+        linear-gradient(135deg, #6d38c7, #2f59d8 52%, #0fae9f);
+      box-shadow: 0 5px 0 #2b1749, 0 0 24px rgba(91, 124, 255, 0.34);
+    }
+
+    .watch-action.secondary,
+    .quick-button.urge,
+    .widget-pill,
+    .complication {
+      color: #3d2468;
+      border: 1px solid rgba(107, 68, 32, 0.32);
+      background: linear-gradient(135deg, #ffe08a, #ffd3ef 58%, #b6fff0);
+      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.45);
+    }
+
+    .watch-dog,
+    .widget-dog {
+      border: 2px solid #6b4420;
+      box-shadow: 0 4px 0 #8a5a2b, 0 0 18px rgba(255, 213, 106, 0.24);
+    }
+
+    .lock-screen {
+      background:
+        linear-gradient(180deg, rgba(27, 10, 54, 0.24), rgba(27, 10, 54, 0.56)),
+        url("assets/cash-dog-avatar.png") center 44% / 112% no-repeat,
+        #1d1738;
+    }
+
+    .lock-time {
+      color: #fff4bd;
+    }
+
+    .lock-time strong {
+      color: #fff4bd;
+      text-shadow: 0 4px 0 #43206f, 0 0 34px rgba(255, 213, 106, 0.42);
+    }
+
+    .lock-widget,
+    .home-widget {
+      border: 2px solid #6b4420;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 30%),
+        linear-gradient(180deg, rgba(255, 246, 212, 0.94), rgba(242, 217, 159, 0.94));
+      box-shadow: 0 5px 0 #8a5a2b, 0 16px 28px rgba(42, 20, 55, 0.2);
+    }
+
+    .app-icon {
+      color: #f7e6b4;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+    }
+
+    .app-icon i {
+      border: 1px solid rgba(255, 213, 106, 0.38);
+      background: linear-gradient(135deg, #6d38c7, #2fc6b5);
+      box-shadow: 0 10px 18px rgba(31, 20, 51, 0.28);
+    }
+
+    .note-card h3 {
+      color: #fff4bd;
+    }
+
     @media (max-width: 980px) {
       .watch-board,
       .widget-board,
@@ -538,23 +728,23 @@
 <body>
   <main class="page">
     <nav class="topbar">
-      <div class="brand"><span class="mark">+</span> PuffPause device mockups</div>
-      <a class="back-link" href="./">Back to app mockup</a>
+      <div class="brand"><span class="mark">+</span> PuffPause realm devices</div>
+      <a class="back-link" href="./">Back to RPG app mockup</a>
     </nav>
 
     <header>
-      <h1>Quick log everywhere.</h1>
-      <p class="lede">The watch app and widgets are designed for the tiny automatic moment before vaping: one glance at the gap, one tap to log a puff, one tap to ride out an urge.</p>
+      <h1>Companion gear for the realm.</h1>
+      <p class="lede">The watch app and widgets become quick-cast tools for the tiny automatic moment before vaping: glance at your mana shield, record a shadow hit, or cast a delay spell.</p>
     </header>
 
     <section class="section" id="watch-mockups">
       <div class="section-head">
-        <h2>Apple Watch App</h2>
-        <p>Fast reporting with large tap targets, haptic feedback, and a complication that keeps the current gap visible without opening the phone.</p>
+        <h2>Apple Watch Spellbook</h2>
+        <p>Fast reporting with large tap targets, haptic feedback, and a complication that keeps the current shield visible without opening the phone.</p>
       </div>
       <div class="watch-board">
         <div class="watch-set">
-          <div class="watch-label">Complication glance</div>
+          <div class="watch-label">Mana shield glance</div>
           <div class="watch">
             <span class="crown"></span>
             <div class="watch-screen">
@@ -562,9 +752,9 @@
               <div class="watch-main">
                 <div class="watch-dog"><img src="assets/cash-dog-avatar.png" alt="Cartoon Cash avatar" /></div>
                 <div class="watch-gap">27</div>
-                <div class="watch-small">min since<br />last puff</div>
+                <div class="watch-small">min since<br />shadow hit</div>
                 <div class="complication-grid">
-                  <div class="complication">Goal 30m</div>
+                  <div class="complication">Gate 30m</div>
                   <div class="complication">Cash</div>
                 </div>
               </div>
@@ -572,31 +762,31 @@
           </div>
         </div>
         <div class="watch-set">
-          <div class="watch-label">One-tap puff log</div>
+          <div class="watch-label">One-tap encounter log</div>
           <div class="watch">
             <span class="crown"></span>
             <div class="watch-screen">
-              <div class="watch-status"><span>9:41</span><span>Today 14</span></div>
+              <div class="watch-status"><span>9:41</span><span>Hits 14</span></div>
               <div class="watch-main">
-                <div class="watch-small">PuffPause</div>
+                <div class="watch-small">Craving Realm</div>
                 <div class="watch-gap">Log</div>
-                <div class="watch-action">+ Puff</div>
-                <div class="watch-action secondary">Urge Only</div>
+                <div class="watch-action">Record Hit</div>
+                <div class="watch-action secondary">Dodge Urge</div>
               </div>
             </div>
           </div>
         </div>
         <div class="watch-set">
-          <div class="watch-label">Delay timer</div>
+          <div class="watch-label">Delay spell</div>
           <div class="watch">
             <span class="crown"></span>
             <div class="watch-screen">
-              <div class="watch-status"><span>9:41</span><span>Craving</span></div>
+              <div class="watch-status"><span>9:41</span><span>Battle</span></div>
               <div class="watch-main">
-                <div class="watch-small">Try one more</div>
+                <div class="watch-small">Hold the line</div>
                 <div class="watch-gap">3:00</div>
-                <div class="watch-small">Cash is rooting<br />for this gap.</div>
-                <div class="watch-action">Start</div>
+                <div class="watch-small">Cash buffs<br />this shield.</div>
+                <div class="watch-action">Cast</div>
               </div>
             </div>
           </div>
@@ -606,12 +796,12 @@
 
     <section class="section" id="widget-mockups">
       <div class="section-head">
-        <h2>Lock + Home Screen Widgets</h2>
-        <p>Widgets make progress ambient: the user sees the current gap and can jump straight into logging or craving mode from the iPhone.</p>
+        <h2>Lock + Home Screen Charms</h2>
+        <p>Widgets make progress ambient: the user sees the current shield and can jump straight into logging or battle mode from the iPhone.</p>
       </div>
       <div class="widget-board">
         <div>
-          <div class="device-label">Lock screen widget</div>
+          <div class="device-label">Lock screen charm</div>
           <div class="phone-frame">
             <div class="phone-screen lock-screen">
               <div class="lock-time">
@@ -621,17 +811,17 @@
               <div class="lock-widget">
                 <div class="widget-row">
                   <div>
-                    <div class="widget-kicker">PuffPause</div>
+                    <div class="widget-kicker">Mana Shield</div>
                     <div class="widget-number">27 min</div>
                   </div>
-                  <div class="widget-pill">3m to goal</div>
+                  <div class="widget-pill">3m to gate</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div>
-          <div class="device-label">Home screen widget</div>
+          <div class="device-label">Home screen charm</div>
           <div class="phone-frame">
             <div class="phone-screen home-screen">
               <div class="app-grid">
@@ -647,22 +837,22 @@
               <div class="home-widget">
                 <div class="widget-row">
                   <div>
-                    <div class="widget-kicker">PuffPause</div>
+                    <div class="widget-kicker">Craving Realm</div>
                     <div class="widget-number">27 min</div>
-                    <div class="watch-small">Best gap today: 1h 12m</div>
+                    <div class="watch-small">Best shield today: 1h 12m</div>
                   </div>
                   <div class="widget-dog"><img src="assets/cash-dog-avatar.png" alt="Cartoon Cash avatar" /></div>
                 </div>
                 <div class="quick-buttons">
-                  <div class="quick-button">Log Puff</div>
-                  <div class="quick-button urge">Urge Only</div>
+                  <div class="quick-button">Record Hit</div>
+                  <div class="quick-button urge">Dodge</div>
                 </div>
               </div>
               <div class="app-grid" style="margin-top: 20px;">
                 <div class="app-icon"><i></i><span>Safari</span></div>
                 <div class="app-icon"><i></i><span>Calendar</span></div>
                 <div class="app-icon"><i></i><span>Wallet</span></div>
-                <div class="app-icon"><i></i><span>PuffPause</span></div>
+                <div class="app-icon"><i></i><span>Realm</span></div>
               </div>
             </div>
           </div>
@@ -672,21 +862,21 @@
 
     <section class="section">
       <div class="section-head">
-        <h2>Integration Notes</h2>
+        <h2>Native Quest Notes</h2>
         <p>These are product notes for the native app build, not medical claims.</p>
       </div>
       <div class="integration-notes">
         <article class="note-card">
           <h3>Apple Watch</h3>
-          <p>Use a watchOS companion for one-tap puff logging, urge-only logging, delay timers, haptics, and a complication showing the current vape-free gap.</p>
+          <p>Use a watchOS companion for one-tap encounter logging, urge dodges, delay timers, haptics, and a complication showing the current shield.</p>
         </article>
         <article class="note-card">
           <h3>Widgets</h3>
-          <p>Use WidgetKit for Lock Screen and Home Screen widgets that display the current gap, next goal, today count, and Cash Mode encouragement.</p>
+          <p>Use WidgetKit for Lock Screen and Home Screen charms that display the current shield, next gate, today count, and Cash companion encouragement.</p>
         </article>
         <article class="note-card">
           <h3>Sync</h3>
-          <p>Sync iPhone, widgets, and Apple Watch through shared local app data and WatchConnectivity so logging from the watch updates the phone timeline.</p>
+          <p>Sync iPhone, widgets, and Apple Watch through shared local app data and WatchConnectivity so watch actions update the campaign timeline.</p>
         </article>
       </div>
     </section>
