@@ -696,6 +696,76 @@
       color: #fff4bd;
     }
 
+    .armory-banner {
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+      margin: 26px 0 8px;
+      border: 2px solid rgba(255, 224, 138, 0.7);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 74% 30%, rgba(255, 244, 189, 0.9) 0 8%, rgba(255, 157, 77, 0.34) 9% 18%, transparent 19%),
+        linear-gradient(150deg, rgba(109, 56, 199, 0.65), transparent 38%),
+        linear-gradient(180deg, #241044 0 44%, #17384b 45% 58%, #0b1d2a 59% 100%);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+    }
+
+    .armory-banner::before,
+    .armory-banner::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .armory-banner::before {
+      inset: 38% -8% 0;
+      background:
+        linear-gradient(145deg, transparent 0 20%, #16102e 21% 23%, transparent 24%),
+        linear-gradient(35deg, transparent 0 50%, #0d2935 51% 54%, transparent 55%),
+        linear-gradient(180deg, transparent 0 58%, rgba(255, 213, 106, 0.32) 59% 61%, transparent 62%),
+        linear-gradient(180deg, transparent, rgba(4, 6, 20, 0.78));
+      clip-path: polygon(0 42%, 12% 30%, 18% 48%, 30% 18%, 43% 50%, 55% 14%, 68% 48%, 78% 28%, 88% 44%, 100% 26%, 100% 100%, 0 100%);
+    }
+
+    .armory-banner::after {
+      left: 26px;
+      bottom: 18px;
+      right: 26px;
+      min-height: 36px;
+      border: 1px solid rgba(255, 224, 138, 0.44);
+      border-radius: 999px;
+      background:
+        linear-gradient(90deg, rgba(255, 213, 106, 0.28), rgba(91, 124, 255, 0.18)),
+        rgba(14, 8, 31, 0.76);
+      box-shadow: inset 0 0 18px rgba(255, 213, 106, 0.12);
+    }
+
+    .armory-banner span {
+      position: absolute;
+      left: 45px;
+      right: 45px;
+      bottom: 28px;
+      z-index: 1;
+      color: #fff6cf;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .watch,
+    .phone-frame {
+      transform: rotate(-1deg);
+    }
+
+    .watch-set:nth-child(2) .watch,
+    .widget-board > div:nth-child(2) .phone-frame {
+      transform: rotate(1deg);
+    }
+
     @media (max-width: 980px) {
       .watch-board,
       .widget-board,
@@ -735,6 +805,9 @@
     <header>
       <h1>Companion gear for the realm.</h1>
       <p class="lede">The watch app and widgets become quick-cast tools for the tiny automatic moment before vaping: glance at your mana shield, record a shadow hit, or cast a delay spell.</p>
+      <div class="armory-banner" aria-label="Fantasy device armory banner">
+        <span><b>Armory Loadout</b><b>Watch + Widget Charms</b></span>
+      </div>
     </header>
 
     <section class="section" id="watch-mockups">
